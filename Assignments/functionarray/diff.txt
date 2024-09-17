@@ -1,0 +1,35 @@
+In c programming structure and union are used to stored memory and manage memory.
+
+
+Structure:
+
+Structure allocates separate memory for each member.
+
+Structures allow you to work with all members at once.
+
+All members can be accessed independently.
+
+Used when you want to store multiple different types of data that will be used simultaneously.
+
+ex:			
+	struct example{
+
+			
+		     };
+
+Union:
+
+while Union shares the same memory for all members.
+ 
+while in unions, only one member is valid at a time due to shared memory.
+
+Only one member can be accessed at a time. Changing the value of one member will overwrite the memory shared by all members.
+
+Used when you need to store different types of data, but only one of them will be used at any given time, allowing for more efficient memory usage.
+
+ex:
+		union example{
+				int a;
+			        float b;
+			         char c;
+			    };
