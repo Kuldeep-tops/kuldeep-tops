@@ -1,0 +1,104 @@
+2. What is OOP? List OOP concept ?
+
+OOP - OOP is 'OBJECT ORIENTED PROGRAMMING', Any of programming language are done by is special characteristics and special function but in cpp is object oriented.
+in object oriented programming language mesure function is reusability and over all in program class and object are functional way to given program,
+in this programs classes and objects are using to program get program are more functional & problem solving,modularity,scalability,security.
+object are self contained to also its facilliates troubleshooting while developing a program.
+its promotes codes modularity,reusability,ancapsulation, and abstraction. 
+
+"The main aim of being cpp born defined as an efficent and flexible language 
+similar to c that also provided high-level features for program organization.
+
+
+oops concepts:class,object:=-
+
+class :
+It is specified as a blueprint that describe the behaviors/states for an object.
+Its is user defined datatype.
+class consist of data members and members function, which can be accessed depending on the access specifier.the object of the class hold separate copies of data members. 
+Its is possible to create as many objects of a class  as required.
+
+syntax:
+class className{
+    access modifier:
+    data member;
+    access modifier:
+    member function(){
+        body of function.
+    }
+};
+
+Object:                                                             
+An Object can be defined as an entity that has a state and behavior, or in other words, anything that exists physically in the world is called an object. It can represent a dog, a person, a table, etc. An object means a combination of data and programs, which further represent an entity.
+syntax: 
+className object _name;
+in this we can protect our data by using access specifier/modifier.
+
+3 types they are:-
+1.public: you can used public data any where in the program.
+2.private: you can't the data directly in other class or function for that you need get and set function to use it
+3.protected :it can be used in the child class only.
+
+Data abstraction & encapsulation -  data abstraction is process that hides data 
+,complex implementation details & code to make code to easier to read & secure.
+data encapsulation is proceass that hides data and controls code visibility to protect 
+data integrity.
+
+polymorphism - The ability to extend in many forms are known as polymorphism.
+the ability to perform the same action in multiple ways, using the
+ same functions or operators repeatedly.
+
+inheritance - a method through which one class inherits the properties from 
+its parent class. inheritance is feature in which one new class is derived 
+from the existing ones.
+
+constructor - called by the compiler when an object is created, constructor 
+allocate memory & initialize the class data members.
+
+distructor - called by the compiler when an object is destroyed,destructors
+deallocate object's memory & perform other cleanup.
+
+Dynamic binding - the process where the method call is resolved at runtime
+rather than compile time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
