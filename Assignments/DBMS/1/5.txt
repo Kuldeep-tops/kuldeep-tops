@@ -1,0 +1,21 @@
+What do you understand By Data Redundancy?
+
+Data redundancy is when the same data is stored in multiple places, 
+such as across different departments or storage systems.
+ It can be a common occurrence in businesses, especially those that don't
+ use a central database. 
+Data redundancy can be beneficial when used for backup or data security, 
+but it can also lead to problems: 
+Storage costs: Data redundancy can lead to increased storage costs. 
+Errors: Inconsistent information can lead to errors and compromised analytics. 
+Confusing users: It can be difficult for users to identify which data to access or update. 
+Corrupt reports: Inconsistent information can lead to corrupt reports 
+and analytics. 
+There are two types of data redundancy:Positive data redundancy
+This is intentional and occurs when an organization creates compressed versions of data 
+to use as a backup.
+Wasteful data redundancy
+This is unintentional and can result from inefficient coding or 
+complicated data processes. 
+Data managers can use data management courses to learn 
+how to reduce data redundancy and optimize data storage. 

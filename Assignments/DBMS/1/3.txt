@@ -1,0 +1,24 @@
+3. What is Difference between DBMS and RDBMS?
+
+DBMS
+stores data in files, and does not link data together.DBMS 
+is typically used by small organizations with fewer users and data.
+
+RDBMS
+stores data in tables, and links data together. RDBMS is
+more sophisticated than DBMS and canhandle large amounts 
+of data more efficiently.
+
+security: RDBMS is more secure than DBMS.
+
+speed: RDBMS is faster than DBMS.
+
+number of users: DBMS allows only one users & RDBMS allows multiple users.
+
+data redundency: DBMS  often have repeated data, but RDBMS prevents this 
+with indexing.
+
+normalization: DBMS is not allow normalization, but RDBMS is allow 
+normalization NF1,NF2,NF3,BCNF.
+
+RDMS is support client server architecture, but DBMS does not support it.

@@ -1,0 +1,20 @@
+1. What do you understand By Database ?
+
+a database is a structured collection of data that is stored and 
+organized for easy to access, management and upadating.
+
+database conatain type of data including numbers, words, images, videos,
+and files. they are used in a variety of setings, such as businesses, scientific
+organizations, and government organizations.
+
+here are some key things to know about databases:
+
+database management system(DBMS): A software that controls a database and allows users to store,retrive and edit data.
+
+data organization: data in database is typically organized into tables with rows & columns. this makes it easier to process & query data.
+
+structured query language(SQL): most databases use SQL to write & query data.
+
+data types: there are many diffrent types of database, including relational databases, object-oriented databases & NoSQL databases.
+
+data security: databases can be used to enforce data security, monitor performance, maintain data integrity.

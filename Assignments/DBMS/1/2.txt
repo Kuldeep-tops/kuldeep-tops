@@ -1,0 +1,13 @@
+2. What is Normalization ?
+
+the process of oganizing data in a database to make it more flexible
+and protect it.
+
+eliminating redundancy: removing duplicate data from tables to save disk 
+space & make maintanance easier.
+
+establishing relationships: creating tables & linking them to ensure 
+that database integrity constraints are maintan.
+
+making data consistent: ensuring that data appears similar across all 
+records & fields.

@@ -1,25 +1,27 @@
 #include <iostream>
 #include <string>
+using namespace std;
 
 class BankAccount {
 private:
-    std::string depositorName;
-    std::string accountNumber;
-    std::string accountType;
+    string depositorName;
+    string accountNumber;
+    string accountType;
     double balance;
 
 public:
     // Constructor to initialize the bank account
-    BankAccount(std::string name, std::string number, std::string type, double initialBalance)
-        : depositorName(name), accountNumber(number), accountType(type), balance(initialBalance) {}
+    
+    BankAccount(string name, string number, string type, double initialBalance)
+        : depositorName(name), accountNumber(number), accountType(type), balance(initialBalance){}
 
     // Method to deposit money
     void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
-            std::cout << "Deposited: $" << amount << ". New Balance: $" << balance << std::endl;
+            cout << "Deposited: Rs" << amount << ". New Balance: Rs" << balance <<endl;
         } else {
-            std::cout << "Deposit amount must be positive." << std::endl;
+            cout << "Deposit amount must be positive." <<endl;
         }
     }
 
@@ -28,26 +30,26 @@ public:
         if (amount > 0) {
             if (amount <= balance) {
                 balance -= amount;
-                std::cout << "Withdrew: $" << amount << ". New Balance: $" << balance << std::endl;
+                cout << "Withdrew: Rs" << amount << ". New Balance: Rs" << balance <<endl;
             } else {
-                std::cout << "Insufficient funds for this withdrawal." << std::endl;
+                cout << "Insufficient funds for this withdrawal." <<endl;
             }
         } else {
-            std::cout << "Withdrawal amount must be positive." << std::endl;
+            cout << "Withdrawal amount must be positive." <<endl;
         }
     }
 
     // Method to check the balance
     void checkBalance() const {
-        std::cout << "Current Balance: $" << balance << std::endl;
+        cout<< "Current Balance: Rs" << balance <<endl;
     }
 
     // Method to display account details
     void displayAccountDetails() const {
-        std::cout << "Account Holder: " << depositorName << std::endl
-                  << "Account Number: " << accountNumber << std::endl
-                  << "Account Type: " << accountType << std::endl
-                  << "Balance: $" << balance << std::endl;
+        cout << "Account Holder: " << depositorName <<endl
+                  << "Account Number: " << accountNumber <<endl
+                  << "Account Type: " << accountType <<endl
+                  << "Balance: $" << balance <<endl;
     }
 };
 

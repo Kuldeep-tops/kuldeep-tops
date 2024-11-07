@@ -1,0 +1,12 @@
+What is SQL Key Constraints writing an Example of SQL Key Constraints
+
+The PRIMARY KEY constraint is simply a combination of NOT NULL 
+and UNIQUE constraints. It means that the column value is used to
+ uniquely identify the row.
+ 
+  For example,
+  
+   CREATE TABLE Colleges ( 
+    college_id INT PRIMARY KEY, 
+    college_code VARCHAR(20) NOT NULL,
+     college_name VARCHAR(50) );

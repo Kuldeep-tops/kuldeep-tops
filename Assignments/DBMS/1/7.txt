@@ -1,0 +1,17 @@
+What is DML Compiler in SQL?
+
+The Full Form of DML is Data Manipulation Language. 
+Data Manipulation Language (DML) is a programming language,
+also a category of SQL, applying useful table format and 
+formulas for exchanging information, with the data limited to 
+a point in the database, using SQL.
+
+a time might occur when data interactions that are fairly 
+complicated are required. In this instance, Data Manipulation
+Language is applicable.
+
+With the help of DML, we can easily tell the database how it
+should respond. For this, the way of communication adapted has been
+created to understand from the beginning. It also delivers a very convenient 
+method to interact with the existing data by adding,deleting or transferring 
+data.

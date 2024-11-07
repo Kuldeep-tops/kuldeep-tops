@@ -1,0 +1,146 @@
+What is save Point? How to create a save Point write a Query?
+
+A savepoint is a named entity that represents the state of data and schemas
+at a particular point within a unit of work. You can create savepoints within 
+a transaction. If the transaction rolls back, changes are undone to the specified 
+savepoint, rather than to the beginning of the transaction.
+
+The SAVEPOINT statement in MySQL is used to save a transaction temporarily.
+ We can save multiple SAVEPOINT in a single transaction. 
+ We can ROLLBACK the transaction to a given SAVEPOINT and the transaction 
+ after that SAVEPOINT are revert back to its previous state.
+
+ID	NAME	AGE	ADDRESS	SALARY
+1	Ramesh	32	Ahmedabad	2000.00
+2	Khilan	25	Delhi	1500.00
+3	Kaushik	23	Kota	2000.00
+4	Chaitali	25	Mumbai	6500.00
+5	Hardik	27	Bhopal	8500.00
+6	Komal	22	Hyderabad	4500.00
+7	Muffy	24	Indore	10000.00
+
+COMMIT;
+
+CREATE TABLE CUSTOMERS (
+   ID INT NOT NULL,
+   NAME VARCHAR (20) NOT NULL,
+   AGE INT NOT NULL,
+   ADDRESS CHAR (25),
+   SALARY DECIMAL (18, 2),
+   PRIMARY KEY (ID)
+);
+
+INSERT INTO CUSTOMERS VALUES 
+(1, 'Ramesh', 32, 'Ahmedabad', 2000.00),
+(2, 'Khilan', 25, 'Delhi', 1500.00),
+(3, 'Kaushik', 23, 'Kota', 2000.00),
+(4, 'Chaitali', 25, 'Mumbai', 6500.00),
+(5, 'Hardik', 27, 'Bhopal', 8500.00),
+(6, 'Komal', 22, 'Hyderabad', 4500.00),
+(7, 'Muffy', 24, 'Indore', 10000.00);
+
+ID	NAME	AGE	ADDRESS	SALARY
+1	Ramesh	32	Ahmedabad	2000.00
+2	Khilan	25	Delhi	1500.00
+3	Kaushik	23	Kota	2000.00
+4	Chaitali	25	Mumbai	6500.00
+5	Hardik	27	Bhopal	8500.00
+6	Komal	22	Hyderabad	4500.00
+7	Muffy	24	Indore	10000.00
+
+Following query would delete those records from the table which
+ have AGE as 25 and then COMMIT the changes in the database.
+
+
+DELETE FROM CUSTOMERS WHERE AGE = 25;
+COMMIT;
+
+Verification
+The two rows from the table would be deleted and if you verify the contents
+ of the CUSTOMERS table using the SELECT statement as −
+
+SELECT * FROM CUSTOMERS;
+
+ID	NAME	AGE	ADDRESS	SALARY
+1	Ramesh	32	Ahmedabad	2000.00
+3	Kaushik	23	Kota	2000.00
+5	Hardik	27	Bhopal	8500.00
+6	Komal	22	Hyderabad	4500.00
+7	Muffy	24	Indore	10000.00
+
+The ROLLBACK Command
+The ROLLBACK command is the transactional command used to undo
+ transactions that have not already been saved to the database. 
+ This command can only undo transactions since the last COMMIT or 
+ ROLLBACK.
+
+The syntax for a ROLLBACK command is as follows −
+
+ROLLBACK;
+Example
+Consider the CUSTOMERS table having the following records −
+
+ID	NAME	AGE	ADDRESS	SALARY
+1	Ramesh	32	Ahmedabad	2000.00
+2	Khilan	25	Delhi	1500.00
+3	Kaushik	23	Kota	2000.00
+4	Chaitali	25	Mumbai	6500.00
+5	Hardik	27	Bhopal	8500.00
+6	Komal	22	Hyderabad	4500.00
+7	Muffy	24	Indore	10000.00
+
+Following query would delete those records from the table where
+the AGE value is 25 and then ROLLBACK the changes in the database.
+
+DELETE FROM CUSTOMERS WHERE AGE = 25;
+ROLLBACK;
+
+Verification
+The delete operation would not impact the table and the SELECT
+statement would produce the following result.
+
+ID	NAME	AGE	ADDRESS	SALARY
+1	Ramesh	32	Ahmedabad	2000.00
+2	Khilan	25	Delhi	1500.00
+3	Kaushik	23	Kota	2000.00
+4	Chaitali	25	Mumbai	6500.00
+5	Hardik	27	Bhopal	8500.00
+6	Komal	22	Hyderabad	4500.00
+7	Muffy	24	Indore	10000.00
+
+
+The SAVEPOINT Command
+A SAVEPOINT is a logical rollback point in a transaction.
+
+Usually, when you execute the ROLLBACK command, it undoes the changes until
+the last COMMIT. But, if you create save points you can partially roll the
+transaction back to these points. You can create multiple save points between
+two commits.
+
+SAVEPOINT savepoint_name;
+
+ROLLBACK TO savepoint_name;
+
+SAVEPOINT SP1;
+Query OK, 0 rows affected (0.00 sec)
+
+DELETE FROM CUSTOMERS WHERE ID=1;
+Query OK, 1 row affected (0.01 sec)
+
+SAVEPOINT SP2;
+Query OK, 0 rows affected (0.00 sec)
+
+DELETE FROM CUSTOMERS WHERE ID=2;
+Query OK, 0 rows affected (0.00 sec)
+
+SAVEPOINT SP3;
+Query OK, 0 rows affected (0.00 sec)
+
+DELETE FROM CUSTOMERS WHERE ID=3;
+Query OK, 1 row affected (0.01 sec)
+
+ROLLBACK TO SP2;
+
+RELEASE SAVEPOINT SAVEPOINT_NAME;
+
+SET TRANSACTION [ READ WRITE | READ ONLY ];
