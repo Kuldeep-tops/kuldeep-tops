@@ -1,0 +1,69 @@
+mysql> create database salespeople;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> use salespeople;
+Database changed
+
+mysql> create table salespeople(salesman_id int primary key, name varchar(20), city varchar(20), commission decimal(15,2));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> describe salespeople;
++-------------+---------------+------+-----+---------+-------+
+| Field       | Type          | Null | Key | Default | Extra |
++-------------+---------------+------+-----+---------+-------+
+| salesman_id | int           | NO   | PRI | NULL    |       |
+| name        | varchar(20)   | YES  |     | NULL    |       |
+| city        | varchar(20)   | YES  |     | NULL    |       |
+| commission  | decimal(15,2) | YES  |     | NULL    |       |
++-------------+---------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select * from salespeople;
++-------------+------------+----------+------------+
+| salesman_id | name       | city     | commission |
++-------------+------------+----------+------------+
+|        5001 | James Hoog | New York |       0.15 |
++-------------+------------+----------+------------+
+1 row in set (0.00 sec)
+
+mysql> insert into salespeople values(5002,"Nail Knite","Paris",0.13);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into salespeople values(5005,"Pit Alex","London",0.11);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into salespeople values(5006,"Mc Lyon","Paris",0.14);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into salespeople values(5007,"Paul Adam","Rome",0.13);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into salespeople values(5003,"Lauson Hen","San Jose",0.12);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from salespeople;
++-------------+------------+----------+------------+
+| salesman_id | name       | city     | commission |
++-------------+------------+----------+------------+
+|        5001 | James Hoog | New York |       0.15 |
+|        5002 | Nail Knite | Paris    |       0.13 |
+|        5003 | Lauson Hen | San Jose |       0.12 |
+|        5005 | Pit Alex   | London   |       0.11 |
+|        5006 | Mc Lyon    | Paris    |       0.14 |
+|        5007 | Paul Adam  | Rome     |       0.13 |
++-------------+------------+----------+------------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT salesman_id, name, city, commission
+    -> FROM salespeople;
++-------------+------------+----------+------------+
+| salesman_id | name       | city     | commission |
++-------------+------------+----------+------------+
+|        5001 | James Hoog | New York |       0.15 |
+|        5002 | Nail Knite | Paris    |       0.13 |
+|        5003 | Lauson Hen | San Jose |       0.12 |
+|        5005 | Pit Alex   | London   |       0.11 |
+|        5006 | Mc Lyon    | Paris    |       0.14 |
+|        5007 | Paul Adam  | Rome     |       0.13 |
++-------------+------------+----------+------------+
+6 rows in set (0.00 sec)

@@ -1,0 +1,85 @@
+1. Create Table Name : Student and Exam
+
+CREATE TABLE Student (
+    Rollno INT PRIMARY KEY,          -- Unique identifier for the student
+    Name VARCHAR(50),              -- name of the student
+    Branch VARCHAR(50),               -- branch name of the student
+    
+);
+
+create database student;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> create table student(Rollno int primary key,name varchar(50),branch varchar(50));
+mysql> use student
+Database changed
+mysql> create table student(Rollno int primary key,name varchar(50),branch varchar(50));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> select * from student;
+Empty set (0.00 sec)
+
+mysql> insert into student values(1,"Jay","Computer Science");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into student values(2,"Suhani","Electronic Comm");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into student values(3,"Kriti","Electronic Comm");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from student;
++--------+--------+------------------+
+| Rollno | name   | branch           |
++--------+--------+------------------+
+|      1 | Jay    | Computer Science |
+|      2 | Suhani | Electronic Comm  |
+|      3 | Kriti  | Electronic Comm  |
++--------+--------+------------------+
+3 rows in set (0.02 sec)
+
+ create database Exam;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use student;
+Database changed
+mysql> insert into exam values(1,"CS11",50,"CS");
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into exam values(1,"CS12",60,"CS");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into exam values(2,"EC101",66,"EC");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into exam values(2,"EC102",70,"EC");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into exam values(3,"EC101",45,"EC");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into exam values(3,"EC102",50,"EC");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from student;
++--------+--------+------------------+
+| Rollno | name   | branch           |
++--------+--------+------------------+
+|      1 | Jay    | Computer Science |
+|      2 | Suhani | Electronic Comm  |
+|      3 | Kriti  | Electronic Comm  |
++--------+--------+------------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from exam;
++--------+--------+-------+--------+
+| Rollno | s_code | marks | p_code |
++--------+--------+-------+--------+
+|      1 | CS11   |    50 | CS     |
+|      1 | CS12   |    60 | CS     |
+|      2 | EC101  |    66 | EC     |
+|      2 | EC102  |    70 | EC     |
+|      3 | EC101  |    45 | EC     |
+|      3 | EC102  |    50 | EC     |
++--------+--------+-------+--------+
+6 rows in set (0.00 sec)

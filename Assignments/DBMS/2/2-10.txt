@@ -1,0 +1,185 @@
+mysql> use employee;
+Database changed
+mysql> insert into employee values(1,"John","Abraham",1000000,"01-JAN-13 12.00.00 AM","Banking");
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into employee values(2,"Michael","Clarke",800000,"01-JAN-13 12.00.00 AM","Insurance");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into employee values(3,"Roy","Thomas",700000,"01-FEB-13 12.00.00 AM","Banking");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into employee values(4,"Tom","Jose",600000,"01-FEB-13 12.00.00 AM","Insurance");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into employee values(5,"Jerry","Pinto",650000,"01-FEB-13 12.00.00 AM","Insurance");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into employee values(6,"Philip","Mathew",750000,"01-JAN-13 12.00.00 AM","Services");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into employee values(7,"TestName1","123",650000,"01-JAN-13 12.00.00 AM","Services");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into employee values(8,"TestName2","Lname%",600000,"01-FEB-13 12.00.00 AM","Insurance");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from employee;
++-------------+------------+-----------+---------+-----------------------+------------+
+| Employee_id | First_name | Last_name | Salary  | Joining_date          | Department |
++-------------+------------+-----------+---------+-----------------------+------------+
+|           1 | John       | Abraham   | 1000000 | 01-JAN-13 12.00.00 AM | Banking    |
+|           2 | Michael    | Clarke    |  800000 | 01-JAN-13 12.00.00 AM | Insurance  |
+|           3 | Roy        | Thomas    |  700000 | 01-FEB-13 12.00.00 AM | Banking    |
+|           4 | Tom        | Jose      |  600000 | 01-FEB-13 12.00.00 AM | Insurance  |
+|           5 | Jerry      | Pinto     |  650000 | 01-FEB-13 12.00.00 AM | Insurance  |
+|           6 | Philip     | Mathew    |  750000 | 01-JAN-13 12.00.00 AM | Services   |
+|           7 | TestName1  | 123       |  650000 | 01-JAN-13 12.00.00 AM | Services   |
+|           8 | TestName2  | Lname%    |  600000 | 01-FEB-13 12.00.00 AM | Insurance  |
++-------------+------------+-----------+---------+-----------------------+------------+
+8 rows in set (0.00 sec)
+
+mysql> create table incentive(Employee_ref_id int ,foreign key(Employee_ref_id) references employee(Employee_id),Incentive_date varchar(100) ,Incentive_amount int);
+Query OK, 0 rows affected (0.20 sec)
+
+mysql> insert into incentive values(1,"01-FEB-13",5000),(2,"01-FEB-13",3000),(3,"01-FEB-13",4000),(1,"01-JAN-13",4500),(2,"01-JAN-13",3500);
+Query OK, 5 rows affected (0.02 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from incentive;
++-----------------+----------------+------------------+
+| Employee_ref_id | Incentive_date | Incentive_amount |
++-----------------+----------------+------------------+
+|               1 | 01-FEB-13      |             5000 |
+|               2 | 01-FEB-13      |             3000 |
+|               3 | 01-FEB-13      |             4000 |
+|               1 | 01-JAN-13      |             4500 |
+|               2 | 01-JAN-13      |             3500 |
++-----------------+----------------+------------------+
+5 rows in set (0.03 sec)
+
+ create table incentive(Employee_ref_id int ,foreign key(Employee_ref_id) references employee(Employee_id),Incentive_date varchar(100) ,Incentive_amount int);
+Query OK, 0 rows affected (0.20 sec)
+
+mysql> insert into incentive values(1,"01-FEB-13",5000),(2,"01-FEB-13",3000),(3,"01-FEB-13",4000),(1,"01-JAN-13",4500),(2,"01-JAN-13",3500);
+Query OK, 5 rows affected (0.02 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from incentive;
++-----------------+----------------+------------------+
+| Employee_ref_id | Incentive_date | Incentive_amount |
++-----------------+----------------+------------------+
+|               1 | 01-FEB-13      |             5000 |
+|               2 | 01-FEB-13      |             3000 |
+|               3 | 01-FEB-13      |             4000 |
+|               1 | 01-JAN-13      |             4500 |
+|               2 | 01-JAN-13      |             3500 |
++-----------------+----------------+------------------+
+5 rows in set (0.03 sec)
+
+mysql> select First_name as Employee_name from Employee where First_name="Tom";
++---------------+
+| Employee_name |
++---------------+
+| Tom           |
++---------------+
+1 row in set (0.03 sec)
+
+mysql> select First_name,Joning_date,Salary from employee;
+ERROR 1054 (42S22): Unknown column 'Joning_date' in 'field list'
+mysql> select*from employee order by First_name asc, Salary desc;
++-------------+------------+-----------+---------+-----------------------+------------+
+| Employee_id | First_name | Last_name | Salary  | Joining_date          | Department |
++-------------+------------+-----------+---------+-----------------------+------------+
+|           5 | Jerry      | Pinto     |  650000 | 01-FEB-13 12.00.00 AM | Insurance  |
+|           1 | John       | Abraham   | 1000000 | 01-JAN-13 12.00.00 AM | Banking    |
+|           2 | Michael    | Clarke    |  800000 | 01-JAN-13 12.00.00 AM | Insurance  |
+|           6 | Philip     | Mathew    |  750000 | 01-JAN-13 12.00.00 AM | Services   |
+|           3 | Roy        | Thomas    |  700000 | 01-FEB-13 12.00.00 AM | Banking    |
+|           7 | TestName1  | 123       |  650000 | 01-JAN-13 12.00.00 AM | Services   |
+|           8 | TestName2  | Lname%    |  600000 | 01-FEB-13 12.00.00 AM | Insurance  |
+|           4 | Tom        | Jose      |  600000 | 01-FEB-13 12.00.00 AM | Insurance  |
++-------------+------------+-----------+---------+-----------------------+------------+
+8 rows in set (0.01 sec)
+
+mysql> select*from employee where First_name="John";
++-------------+------------+-----------+---------+-----------------------+------------+
+| Employee_id | First_name | Last_name | Salary  | Joining_date          | Department |
++-------------+------------+-----------+---------+-----------------------+------------+
+|           1 | John       | Abraham   | 1000000 | 01-JAN-13 12.00.00 AM | Banking    |
++-------------+------------+-----------+---------+-----------------------+------------+
+1 row in set (0.00 sec)
+
+mysql> select department,Salary from employee order by Salary asc;
++------------+---------+
+| department | Salary  |
++------------+---------+
+| Insurance  |  600000 |
+| Insurance  |  600000 |
+| Insurance  |  650000 |
+| Services   |  650000 |
+| Banking    |  700000 |
+| Services   |  750000 |
+| Insurance  |  800000 |
+| Banking    | 1000000 |
++------------+---------+
+8 rows in set (0.00 sec)
+
+mysql>  select First_name,Joining_date,Salary from employee;
++------------+-----------------------+---------+
+| First_name | Joining_date          | Salary  |
++------------+-----------------------+---------+
+| John       | 01-JAN-13 12.00.00 AM | 1000000 |
+| Michael    | 01-JAN-13 12.00.00 AM |  800000 |
+| Roy        | 01-FEB-13 12.00.00 AM |  700000 |
+| Tom        | 01-FEB-13 12.00.00 AM |  600000 |
+| Jerry      | 01-FEB-13 12.00.00 AM |  650000 |
+| Philip     | 01-JAN-13 12.00.00 AM |  750000 |
+| TestName1  | 01-JAN-13 12.00.00 AM |  650000 |
+| TestName2  | 01-FEB-13 12.00.00 AM |  600000 |
++------------+-----------------------+---------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT employee.First_name, incentive.incentive_amount
+    -> FROM employee
+    -> INNER JOIN incentive
+    -> ON employee.employee_id = incentive.Employee_ref_id
+    -> where Incentive_amount>3000;
++------------+------------------+
+| First_name | incentive_amount |
++------------+------------------+
+| John       |             5000 |
+| Roy        |             4000 |
+| John       |             4500 |
+| Michael    |             3500 |
++------------+------------------+
+4 rows in set (0.00 sec)
+
+mysql> CREATE TABLE view_table (
+    ->     view_id INT PRIMARY KEY AUTO_INCREMENT,
+    ->     Employee_id INT NOT NULL,
+    ->     First_name VARCHAR(50),
+    ->     Last_name VARCHAR(50),
+    ->     Salary DECIMAL(10, 2),
+    ->     Joning_date VARCHAR(100),
+    ->     Department VARCHAR(50)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+drop table view_table;
+
+DELIMITER //
+
+CREATE TRIGGER after_employee_insert
+AFTER INSERT ON employee
+FOR EACH ROW
+BEGIN
+    INSERT INTO view_table (Employee_id, First_name, Last_name, Salary, Joning_date, Department)
+    VALUES (NEW.Employee_id, NEW.First_name, NEW.Last_name, NEW.Salary, NEW.Joning_date, NEW.Department);
+END //
+DELIMITER ;
+
+drop trigger after_employee_insert;
+
+insert into employee values(11,"John","Abraham",1000000,"01-JAN-13 12.00.00 AM","Banking");
+select*from employee;
