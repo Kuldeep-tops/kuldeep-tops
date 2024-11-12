@@ -1,0 +1,66 @@
+create table:
+
+CREATE TABLE Bank (
+    branch_id INT PRIMARY KEY,
+    branch_name VARCHAR(255) NOT NULL,
+    branch_city VARCHAR(255) NOT NULL
+);
+
+create account holder table:
+
+CREATE TABLE Account_holder (
+    account_holder_id INT PRIMARY KEY,
+    account_no VARCHAR(20) UNIQUE NOT NULL,
+    account_holder_name VARCHAR(255) NOT NULL,
+    city VARCHAR(255) NOT NULL,
+    contact VARCHAR(15),
+    date_of_account_created DATE NOT NULL,
+    account_status ENUM('active', 'terminated') NOT NULL,
+    account_type ENUM('savings', 'checking', 'current') NOT NULL,
+    balance DECIMAL(15, 2) NOT NULL
+);
+
+create loan table: 
+
+CREATE TABLE Loan (
+    loan_no INT PRIMARY KEY,
+    branch_id INT,
+    account_holder_id INT,
+    loan_amount DECIMAL(15, 2) NOT NULL,
+    loan_type VARCHAR(255) NOT NULL,
+    FOREIGN KEY (branch_id) REFERENCES Bank(branch_id),
+    FOREIGN KEY (account_holder_id) REFERENCES Account_holder(account_holder_id)
+);
+
+for transaction:
+ 
+START TRANSACTION;
+
+-- Subtract amount from Account A
+UPDATE Account_holder
+SET balance = balance - 100
+WHERE account_no = 'A' AND balance >= 100;
+
+-- Add amount to Account B
+UPDATE Account_holder
+SET balance = balance + 100
+WHERE account_no = 'B';
+
+COMMIT;
+
+SELECT account_holder_id, account_holder_name, city
+FROM Account_holder
+WHERE city = 'city_name';
+
+SELECT account_no, account_holder_name
+FROM Account_holder
+WHERE DAY(date_of_account_created) > 15;
+
+SELECT branch_city, COUNT(*) AS Count_Branch
+FROM Bank
+GROUP BY branch_city;
+
+
+SELECT a.account_holder_id, a.account_holder_name, l.branch_id, l.loan_amount
+FROM Account_holder a
+JOIN Loan l ON a.account_holder_id = l.account_holder_id;
