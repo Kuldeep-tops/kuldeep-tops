@@ -1,0 +1,89 @@
+1. What is the use of the ALTER command in SQL?
+
+The ALTER command in SQL is used to modify the structure of an existing database object, such as a table, view, or index. It allows you to make changes like adding, deleting, or modifying columns in a table, changing data types, renaming columns or tables, and so on.
+
+Common Uses of the ALTER Command:
+Add a New Column: You can add a new column to an existing table.
+
+
+ALTER TABLE table_name
+ADD column_name datatype;
+Modify an Existing Column: You can change the data type or other attributes of an existing column.
+
+
+ALTER TABLE table_name
+MODIFY COLUMN column_name new_datatype;
+Rename a Column: You can rename an existing column in a table.
+
+
+ALTER TABLE table_name
+RENAME COLUMN old_column_name TO new_column_name;
+Drop (Remove) a Column: You can remove a column from a table.
+
+
+ALTER TABLE table_name
+DROP COLUMN column_name;
+Rename a Table: You can rename an existing table.
+
+
+ALTER TABLE old_table_name
+RENAME TO new_table_name;
+Add a Constraint: You can add constraints like PRIMARY KEY, FOREIGN KEY, UNIQUE, etc., to an existing table.
+
+
+ALTER TABLE table_name
+ADD CONSTRAINT constraint_name PRIMARY KEY (column_name);
+Drop a Constraint: You can remove a constraint from a table.
+
+
+ALTER TABLE table_name
+DROP CONSTRAINT constraint_name;
+Example:
+If you have a students table and you want to add a column for email, you would use the following command:
+
+
+ALTER TABLE students
+ADD email VARCHAR(255);
+
+2. How can you add, modify, and drop columns from a table using ALTER?
+
+You can use the ALTER command to add, modify, or drop columns from a table as follows:
+
+1. Add a Column:
+To add a new column to an existing table, use the ADD keyword.
+
+
+ALTER TABLE table_name
+ADD column_name datatype;
+Example:
+
+
+ALTER TABLE students
+ADD email VARCHAR(255);
+This adds an email column to the students table with the data type VARCHAR(255).
+
+2. Modify a Column:
+To change the data type or size of an existing column, use the MODIFY (or CHANGE in some databases like MySQL) keyword.
+
+
+ALTER TABLE table_name
+MODIFY COLUMN column_name new_datatype;
+Example:
+
+
+ALTER TABLE students
+MODIFY COLUMN email VARCHAR(100);
+This modifies the email column to have a maximum length of 100 characters.
+
+3. Drop a Column:
+To remove a column from a table, use the DROP COLUMN keyword.
+
+
+ALTER TABLE table_name
+DROP COLUMN column_name;
+
+Example:
+
+ALTER TABLE students
+DROP COLUMN email;
+This removes the email column from the students table.

@@ -1,0 +1,22 @@
+1.
+
+CREATE TABLE teachers (
+    teacher_id INT PRIMARY KEY,           -- teacher_id as the primary key
+    teacher_name VARCHAR(100) NOT NULL,   -- teacher_name cannot be NULL
+    subject VARCHAR(100) NOT NULL,        -- subject cannot be NULL
+    email VARCHAR(100) UNIQUE             -- email must be unique
+);
+
+2.
+
+-- Add the teacher_id column to the students table
+ALTER TABLE students
+ADD teacher_id INT;
+
+-- Create the foreign key constraint to link teacher_id in students to teacher_id in teachers
+ALTER TABLE students
+ADD CONSTRAINT fk_teacher
+FOREIGN KEY (teacher_id)
+REFERENCES teachers(teacher_id);
+
+
