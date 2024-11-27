@@ -1,0 +1,48 @@
+1.
+-- Create the departments table
+CREATE TABLE departments (
+    department_id INT PRIMARY KEY,
+    department_name VARCHAR(100) NOT NULL
+);
+
+-- Create the employees table
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(100) NOT NULL,
+    department_id INT,
+    FOREIGN KEY (department_id) REFERENCES departments(department_id)
+);
+
+-- Insert data into the departments table
+INSERT INTO departments (department_id, department_name)
+VALUES
+    (1, 'Sales'),
+    (2, 'Engineering'),
+    (3, 'Human Resources'),
+    (4, 'Marketing');
+
+-- Insert data into the employees table
+INSERT INTO employees (employee_id, employee_name, department_id)
+VALUES
+    (101, 'Alice', 1),
+    (102, 'Bob', 2),
+    (103, 'Charlie', 3),
+    (104, 'David', 2),
+    (105, 'Eve', 4);
+
+    SELECT employees.employee_name, departments.department_name
+FROM employees
+INNER JOIN departments
+ON employees.department_id = departments.department_id;
+
+2.
+
+SELECT departments.department_name, employees.employee_name
+FROM departments
+LEFT JOIN employees ON departments.department_id = employees.department_id;
+
+INSERT INTO departments (department_id, department_name)
+VALUES (5, 'Legal');
+
+
+

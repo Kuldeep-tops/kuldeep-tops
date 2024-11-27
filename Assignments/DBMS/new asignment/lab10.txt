@@ -1,0 +1,55 @@
+1.
+-- Start the transaction
+BEGIN TRANSACTION;
+
+-- Insert some rows into the courses table
+INSERT INTO courses (course_id, course_name, credits)
+VALUES (101, 'Introduction to Programming', 3);
+
+INSERT INTO courses (course_id, course_name, credits)
+VALUES (102, 'Database Management Systems', 4);
+
+INSERT INTO courses (course_id, course_name, credits)
+VALUES (103, 'Data Structures and Algorithms', 3);
+
+-- Commit the transaction to save changes permanently
+COMMIT;
+
+2.
+-- Step 1: Start the transaction
+BEGIN TRANSACTION;
+
+-- Step 2: Insert additional rows into the courses table
+INSERT INTO courses (course_id, course_name, credits)
+VALUES (104, 'Web Development', 3);
+
+INSERT INTO courses (course_id, course_name, credits)
+VALUES (105, 'Operating Systems', 4);
+
+INSERT INTO courses (course_id, course_name, credits)
+VALUES (106, 'Machine Learning', 3);
+
+-- Step 3: Rollback the last insert operation (undo the insertion of course_id 106)
+ROLLBACK;
+
+3.
+-- Step 1: Start the transaction
+BEGIN TRANSACTION;
+
+-- Step 2: Create a SAVEPOINT called 'before_update'
+SAVEPOINT before_update;
+
+-- Step 3: Update some rows in the courses table
+UPDATE courses
+SET credits = 4
+WHERE course_id = 104;  -- Assume course_id 104 is 'Web Development'
+
+UPDATE courses
+SET credits = 5
+WHERE course_id = 105;  -- Assume course_id 105 is 'Operating Systems'
+
+-- Step 4: Roll back to the savepoint, undoing the updates after 'before_update'
+ROLLBACK TO SAVEPOINT before_update;
+
+-- Step 5: Commit the transaction (or roll back the whole transaction)
+COMMIT;  -- This commits the transaction, saving any other changes made before the savepoint

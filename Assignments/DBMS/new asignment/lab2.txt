@@ -1,0 +1,17 @@
+1.
+SELECT student_name, age
+FROM students;
+
+SELECT student_name, age
+FROM students
+WHERE age > 18;
+
+2.
+SELECT * 
+FROM students
+WHERE age > 10;
+
+SELECT student_name, age
+FROM students
+WHERE age > 10;
+
