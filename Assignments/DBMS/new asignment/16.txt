@@ -27,19 +27,7 @@ Packages: PL/SQL supports packages, which group related procedures, functions, v
 3. Error Handling and Exception Management
 Exception Handling: PL/SQL provides a built-in mechanism for handling errors using the EXCEPTION block. This allows you to trap runtime errors, manage them gracefully, and decide how to handle various types of exceptions (e.g., database errors, logical errors).
 Custom Exception Handling: You can define custom exceptions to handle application-specific errors, making your application more robust and user-friendly.
-
 4. Increased Security
 Encapsulation of Logic: With PL/SQL, you can encapsulate business logic and data manipulation operations inside stored procedures and functions, which means that only authorized users with appropriate privileges can access or modify critical parts of the application. This provides an added layer of security and helps control access to sensitive data.
 Data Integrity: By centralizing logic in the database, you can ensure consistent enforcement of business rules. This reduces the chances of errors or inconsistencies that could occur if business logic is spread across different parts of an application.
-
-BEGIN
-   -- Some SQL operation
-   UPDATE employees SET salary = salary * 1.10 WHERE department_id = 100;
-EXCEPTION
-   WHEN NO_DATA_FOUND THEN
-      DBMS_OUTPUT.PUT_LINE('No records updated.');
-   WHEN OTHERS THEN
-      DBMS_OUTPUT.PUT_LINE('An unexpected error occurred.');
-END;
-
 

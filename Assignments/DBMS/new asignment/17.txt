@@ -1,45 +1,20 @@
 1.What are control structures in PL/SQL? Explain the IF-THEN and LOOP control structures
 
-In PL/SQL, control structures are used to control the flow of execution within a PL/SQL block based on conditions or repetitive logic. These structures enable you to make decisions, iterate over a set of instructions, or control the sequence of operations within a program.
-
-There are two main types of control structures in PL/SQL:
-
+In PL/SQL, control structures are used to control the flow of execution within a PL/SQL block based on conditions or repetitive logic.
+ These structures enable you to make decisions,
+ iterate over a set of instructions, or control the sequence of operations within a program.
 Conditional Control Structures (e.g., IF-THEN, CASE)
 Iterative Control Structures (e.g., LOOP, FOR LOOP, WHILE LOOP)
-
 1. IF-THEN Control Structure
-
 IF <condition> THEN
     -- Statements to be executed if condition is true
 END IF;
-
-DECLARE
-    v_salary NUMBER := 5000;
-BEGIN
-    IF v_salary > 4000 THEN
-        DBMS_OUTPUT.PUT_LINE('Salary is above threshold');
-    END IF;
-END;
-/
-
 IF-THEN-ELSE Control Structure
 IF <condition> THEN
     -- Statements to be executed if condition is true
 ELSE
     -- Statements to be executed if condition is false
 END IF;
-
-DECLARE
-    v_salary NUMBER := 3000;
-BEGIN
-    IF v_salary > 4000 THEN
-        DBMS_OUTPUT.PUT_LINE('Salary is above threshold');
-    ELSE
-        DBMS_OUTPUT.PUT_LINE('Salary is below threshold');
-    END IF;
-END;
-/
-
 3. IF-THEN-ELSIF-ELSE Control Structure
 IF <condition1> THEN
     -- Statements if condition1 is true
@@ -48,201 +23,41 @@ ELSIF <condition2> THEN
 ELSE
     -- Statements if neither condition1 nor condition2 is true
 END IF;
-
-DECLARE
-    v_salary NUMBER := 5000;
-BEGIN
-    IF v_salary < 3000 THEN
-        DBMS_OUTPUT.PUT_LINE('Low salary');
-    ELSIF v_salary < 5000 THEN
-        DBMS_OUTPUT.PUT_LINE('Medium salary');
-    ELSE
-        DBMS_OUTPUT.PUT_LINE('High salary');
-    END IF;
-END;
-/
-
 4. LOOP Control Structure
 LOOP
     -- Statements to be executed
 END LOOP;
-
-DECLARE
-    v_counter NUMBER := 1;
-BEGIN
-    LOOP
-        EXIT WHEN v_counter > 5;  -- Exit condition
-        DBMS_OUTPUT.PUT_LINE('Counter: ' || v_counter);
-        v_counter := v_counter + 1;  -- Increment counter
-    END LOOP;
-END;
-/
-
 5. WHILE-LOOP Control Structure
 WHILE <condition> LOOP
     -- Statements to be executed
 END LOOP;
-
-DECLARE
-    v_counter NUMBER := 1;
-BEGIN
-    WHILE v_counter <= 5 LOOP
-        DBMS_OUTPUT.PUT_LINE('Counter: ' || v_counter);
-        v_counter := v_counter + 1;  -- Increment counter
-    END LOOP;
-END;
-/
-
 6. FOR-LOOP Control Structure
 FOR <counter> IN <start_value>.. <end_value> LOOP
     -- Statements to be executed
 END LOOP;
 
-DECLARE
-BEGIN
-    FOR v_counter IN 1..5 LOOP
-        DBMS_OUTPUT.PUT_LINE('Counter: ' || v_counter);
-    END LOOP;
-END;
-/
-
 2. How do control structures in PL/SQL help in writing complex queries?
 
-Control structures in PL/SQL are essential for writing complex queries and creating sophisticated logic inside PL/SQL blocks. While SQL itself is declarative and used for querying data from the database, PL/SQL (Procedural Language/SQL) extends SQL by allowing for procedural constructs, such as loops, conditionals, and exceptions. These control structures help in:
-
+Control structures in PL/SQL are essential for writing complex queries and creating sophisticated logic inside PL/SQL blocks.
+ While SQL itself is declarative and used for querying data from the database, PL/SQL (Procedural Language/SQL) extends SQL by allowing for procedural
+ constructs, such as loops, conditionals, and exceptions. 
 Making decisions based on query results (e.g., using IF-THEN to execute different logic depending on the data).
 Iterating over sets of data (e.g., using loops to process multiple records returned by a query).
 Handling errors and exceptions that might occur during query execution.
 Optimizing complex queries by breaking them into smaller, manageable parts and controlling the flow based on conditions.
-Here's a deeper look at how control structures specifically help in writing and managing complex queries in PL/SQL:
-
-
 1. Conditionally Controlling the Flow of Queries (Using IF-THEN)
-Control structures like IF-THEN allow you to execute different SQL queries based on conditions, which can simplify complex logic and enhance readability. For example, you can check the result of a query and decide whether to execute another query or process the data in a specific way.
-
-Example:
-Imagine you want to check whether a particular product exists in the database, and if it does, you fetch its details; otherwise, you display an error message.
-
-
-DECLARE
-    v_product_id NUMBER := 101;
-    v_product_name VARCHAR2(100);
-BEGIN
-    -- Check if the product exists
-    SELECT product_name INTO v_product_name
-    FROM products
-    WHERE product_id = v_product_id;
-    
-    -- If product exists, display its name, otherwise handle error
-    IF v_product_name IS NOT NULL THEN
-        DBMS_OUTPUT.PUT_LINE('Product Name: ' || v_product_name);
-    ELSE
-        DBMS_OUTPUT.PUT_LINE('Product not found');
-    END IF;
-END;
-/
-In this case, the IF-THEN structure allows you to write conditional logic to control which query to execute based on the result of a lookup.
-
+Control structures like IF-THEN allow you to execute different SQL queries based on conditions, which can simplify complex logic and enhance readability. 
 2. Iterating Over Query Results (Using LOOP and CURSOR)
-When dealing with multiple rows of data, control structures like loops allow you to iterate through each row and process it. You can fetch query results into a cursor and then use loops to process each row individually.
-
-Example: Using a FOR loop to process each row from a query:
-
-DECLARE
-    CURSOR c_employees IS
-        SELECT employee_id, employee_name FROM employees;
-BEGIN
-    FOR employee_record IN c_employees LOOP
-        -- Process each employee
-        DBMS_OUTPUT.PUT_LINE('Employee ID: ' || employee_record.employee_id || ' - ' || employee_record.employee_name);
-    END LOOP;
-END;
-/
-In this example, the FOR loop iterates over all employees fetched by the cursor and processes each employee one by one. This is useful for complex operations, such as updating records, performing calculations, or handling business logic for each row.
-
+When dealing with multiple rows of data, control structures like loops allow you to iterate through each row and process it.
+ You can fetch query results into a cursor and then use loops to process each row individually.
+In this example, the FOR loop iterates over all employees fetched by the cursor and processes each employee one by one. 
+This is useful for complex operations, such as updating records, performing calculations, or handling business logic for each row.
 3. Complex Decision-Making (Using IF-THEN-ELSIF and CASE)
-Complex queries often require decisions to be made based on the data. For example, you might need to evaluate multiple conditions to decide how to proceed. The IF-THEN-ELSIF and CASE structures enable you to write such logic easily, making it easier to handle different scenarios in one PL/SQL block.
-
-Example: Using IF-THEN-ELSIF for multiple conditions
-
-DECLARE
-    v_salary NUMBER := 5500;
-BEGIN
-    IF v_salary < 3000 THEN
-        DBMS_OUTPUT.PUT_LINE('Low salary');
-    ELSIF v_salary BETWEEN 3000 AND 5000 THEN
-        DBMS_OUTPUT.PUT_LINE('Medium salary');
-    ELSE
-        DBMS_OUTPUT.PUT_LINE('High salary');
-    END IF;
-END;
-/
-This example shows how ELSIF helps in checking multiple conditions in sequence, which is useful when you need to perform different queries or operations based on the evaluation of complex business logic.
-
-Example: Using CASE for conditional logic
-
-DECLARE
-    v_discount_code VARCHAR2(10) := 'A';
-BEGIN
-    CASE v_discount_code
-        WHEN 'A' THEN
-            DBMS_OUTPUT.PUT_LINE('Apply 10% discount');
-        WHEN 'B' THEN
-            DBMS_OUTPUT.PUT_LINE('Apply 15% discount');
-        WHEN 'C' THEN
-            DBMS_OUTPUT.PUT_LINE('Apply 20% discount');
-        ELSE
-            DBMS_OUTPUT.PUT_LINE('No discount');
-    END CASE;
-END;
-/
-Here, CASE provides a way to perform multiple conditional checks, which could correspond to different actions, such as modifying the SQL query dynamically, calculating values, or triggering different business processes.
-
+Complex queries often require decisions to be made based on the data. For example, you might need to evaluate multiple conditions to decide how to proceed.
+ The IF-THEN-ELSIF and CASE structures enable you to write such logic easily, making it easier to handle different scenarios in one PL/SQL block.
 4. Looping Through Multiple Queries (Using LOOP with Dynamic SQL)
-In some cases, you may need to execute multiple SQL queries or dynamically build queries based on the result of previous queries. Using LOOP in conjunction with dynamic SQL (via EXECUTE IMMEDIATE), you can iterate through and execute multiple SQL statements dynamically.
-
-Example: Dynamic SQL in a LOOP:
-
-DECLARE
-    v_table_name VARCHAR2(30);
-    v_sql VARCHAR2(100);
-    CURSOR c_tables IS
-        SELECT table_name FROM user_tables;
-BEGIN
-    FOR table_record IN c_tables LOOP
-        v_table_name := table_record.table_name;
-        
-        -- Construct dynamic SQL to count rows in each table
-        v_sql := 'SELECT COUNT(*) FROM ' || v_table_name;
-        EXECUTE IMMEDIATE v_sql;
-        
-        DBMS_OUTPUT.PUT_LINE('Table ' || v_table_name || ' has ' || ROW_COUNT || ' rows');
-    END LOOP;
-END;
-/
-In this case, the LOOP iterates over each table name from the user_tables view, dynamically constructs an SQL query for each table to count its rows, and executes it. This approach is useful when working with dynamic queries or processing large amounts of data spread across different tables.
-
+In some cases, you may need to execute multiple SQL queries or dynamically build queries based on the result of previous queries.
+ Using LOOP in conjunction with dynamic SQL (via EXECUTE IMMEDIATE), you can iterate through and execute multiple SQL statements dynamically.
 5. Error Handling and Exception Management
-PL/SQL control structures also include exception handling to catch and handle errors that may occur while executing complex queries. This is important when working with queries that might fail, such as queries involving joins or subqueries, or when working with data that may not always exist.
-
-Example: Using EXCEPTION to handle query errors:
-
-DECLARE
-    v_employee_id NUMBER := 9999; -- Assume this employee doesn't exist
-    v_employee_name VARCHAR2(100);
-BEGIN
-    -- Attempt to select employee details
-    SELECT employee_name INTO v_employee_name
-    FROM employees
-    WHERE employee_id = v_employee_id;
-    
-    DBMS_OUTPUT.PUT_LINE('Employee Name: ' || v_employee_name);
-    
-EXCEPTION
-    WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE('Employee not found');
-    WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
-END;
-/
-Here, if the employee ID doesn't exist, the NO_DATA_FOUND exception is triggered, and the program can gracefully handle the situation without crashing. Similarly, other exceptions are captured by the OTHERS clause, ensuring that errors are managed properly in complex queries.
+PL/SQL control structures also include exception handling to catch and handle errors that may occur while executing complex queries. 
+This is important when working with queries that might fail, such as queries involving joins or subqueries, or when working with data that may not always exist.

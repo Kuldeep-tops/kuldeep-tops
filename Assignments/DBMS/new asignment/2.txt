@@ -1,25 +1,12 @@
 1. What are the basic components of SQL syntax?
 
-The basic components of SQL (Structured Query Language) syntax can be broken down into several key elements that define how SQL statements are structured and executed. Here are the main components:
-
 1. Keywords
 SQL keywords are reserved words that have specific meaning and functionality in SQL. They are the building blocks of SQL queries.
 Examples: SELECT, INSERT, UPDATE, DELETE, FROM, WHERE, ORDER BY, GROUP BY, CREATE, DROP, ALTER, etc.
 2. Clauses
 Clauses are specific parts of SQL statements that define actions or conditions.
-Examples:
-SELECT (defines the columns to be fetched),
-FROM (specifies the table to query),
-WHERE (filters records based on conditions),
-ORDER BY (sorts the result),
-GROUP BY (groups results for aggregation),
-HAVING (filters records after GROUP BY).
 3. Expressions
 Expressions combine values, operators, and functions to return a result.
-Examples:
-Arithmetic expressions like age + 10,
-Logical expressions like age > 18,
-String expressions like 'Hello ' || name.
 4. Operators
 Operators are symbols that perform operations on data values.
 Types of operators:
@@ -34,14 +21,7 @@ Examples: students, student_name, age, etc.
 6. Values
 Values are the data or constants that are used in SQL statements (numbers, strings, dates, etc.).
 Examples: 42, 'John Doe', '2024-11-21'.
-7. Statements
-SQL statements are the full commands or queries that execute an operation in the database.
-Examples:
-SELECT * FROM students WHERE age > 18;
-INSERT INTO students (student_id, name) VALUES (1, 'Alice');
-8. Comments
-Comments allow for adding notes within SQL code that are ignored by the SQL engine. They help document code for better readability and understanding.
-Single-line comment: -- This is a comment
+
 
 2. Write the general structure of an SQL SELECT statement
 
@@ -54,118 +34,10 @@ FROM table_name
 [HAVING condition]
 [ORDER BY column1, column2, ... [ASC|DESC]]
 [LIMIT number_of_records];
-Explanation of Each Part:
-SELECT:
-
-Specifies the columns to retrieve from the database.
-You can use * to select all columns or list specific columns (e.g., column1, column2).
-The optional DISTINCT keyword ensures that the query returns only unique (non-duplicate) rows.
-FROM:
-
-Specifies the table (or tables) from which to retrieve the data.
-You can also specify multiple tables if you're performing joins.
-WHERE (optional):
-
-Filters records based on a condition or set of conditions. Only rows that meet the condition are included in the result set.
-Example: WHERE age > 18
-GROUP BY (optional):
-
-Groups the result set by one or more columns. This is often used with aggregate functions like COUNT(), SUM(), AVG(), etc.
-Example: GROUP BY class
-HAVING (optional):
-
-Filters records after the GROUP BY clause has been applied. It’s used to filter grouped records based on aggregate conditions.
-Example: HAVING COUNT(student_id) > 5
-ORDER BY (optional):
-
-Specifies the order in which the results should be sorted. You can order results by one or more columns.
-ASC (default) orders in ascending order, while DESC orders in descending order.
-Example: ORDER BY student_name ASC
-LIMIT (optional):
-
-Limits the number of rows returned by the query. This is particularly useful for pagination or when you only need a subset of results.
-Example: LIMIT 10
 
 3. Explain the role of clauses in SQL statements.
 
-Clauses in SQL statements are fundamental components that help define and structure the actions of a query. Each clause in an SQL statement plays a specific role, dictating how the query behaves and what data it manipulates or retrieves. Below is an explanation of the most common clauses used in SQL statements and their roles:
+Clauses in SQL statements are fundamental components that help define and structure the actions of a query.
+ Each clause in an SQL statement plays a specific role, dictating how the query behaves and what data it manipulates or retrieves. 
+ Below is an explanation of the most common clauses used in SQL statements and their roles:
 
-1. SELECT Clause
-Role: Specifies the columns that should be retrieved from the database.
-Description: The SELECT clause is the starting point of any query. It defines which columns (or expressions) are to be included in the result set. If you use *, it will select all columns from the specified table(s).
-Example:
-
-SELECT student_name, age FROM students;
-This query retrieves the student_name and age columns from the students table.
-2. FROM Clause
-Role: Specifies the table(s) from which the data should be retrieved.
-Description: The FROM clause identifies the table or tables that are involved in the query. For multiple tables, you may also specify joins to combine data from different sources.
-Example:
-
-SELECT * FROM students;
-This query retrieves all columns from the students table.
-3. WHERE Clause
-Role: Filters the records based on a given condition, restricting the rows that will appear in the result.
-Description: The WHERE clause allows you to specify a condition (or set of conditions) to filter the rows. Only rows that meet the condition are included in the result.
-Example:
-
-SELECT student_name FROM students WHERE age > 18;
-This query retrieves the student_name of students who are older than 18.
-4. GROUP BY Clause
-Role: Groups the result set by one or more columns, often used with aggregate functions like COUNT(), SUM(), AVG(), etc.
-Description: The GROUP BY clause groups the rows that have the same values in the specified columns. After grouping, you can use aggregate functions to perform calculations on each group.
-Example:
-
-SELECT class, COUNT(*) FROM students GROUP BY class;
-This query counts how many students belong to each class and groups the result by class.
-5. HAVING Clause
-Role: Filters the groups after they have been formed by the GROUP BY clause.
-Description: The HAVING clause is used to filter results based on aggregate functions (like COUNT(), AVG(), SUM()) after the GROUP BY operation. It is similar to the WHERE clause, but WHERE applies before grouping, while HAVING applies after grouping.
-Example:
-
-SELECT class, COUNT(*) FROM students GROUP BY class HAVING COUNT(*) > 10;
-This query counts how many students belong to each class and includes only the classes that have more than 10 students.
-6. ORDER BY Clause
-Role: Specifies the order in which the result set should be sorted.
-Description: The ORDER BY clause allows you to sort the result set based on one or more columns. By default, it sorts in ascending order (ASC), but you can specify descending order (DESC) if needed.
-Example:
-
-SELECT student_name, age FROM students ORDER BY age DESC;
-This query retrieves the student_name and age columns from the students table and sorts the result in descending order of age.
-7. LIMIT Clause
-Role: Restricts the number of records returned by the query.
-Description: The LIMIT clause is used to restrict the number of rows that will be returned in the result set. It is often used for pagination or when you only want a subset of results.
-Example:
-
-SELECT * FROM students LIMIT 5;
-This query retrieves the first 5 rows from the students table.
-8. JOIN Clauses
-Role: Combines rows from two or more tables based on a related column.
-Description: The JOIN clause allows you to combine rows from multiple tables, based on a condition (usually matching keys). There are different types of joins:
-INNER JOIN: Returns rows when there is a match in both tables.
-LEFT JOIN (or LEFT OUTER JOIN): Returns all rows from the left table, along with matched rows from the right table.
-RIGHT JOIN (or RIGHT OUTER JOIN): Returns all rows from the right table, along with matched rows from the left table.
-FULL JOIN (or FULL OUTER JOIN): Returns rows when there is a match in one of the tables.
-Example:
-
-SELECT students.student_name, courses.course_name
-FROM students
-INNER JOIN enrollments ON students.student_id = enrollments.student_id
-INNER JOIN courses ON enrollments.course_id = courses.course_id;
-This query retrieves a list of student names and the courses they are enrolled in by joining three tables: students, enrollments, and courses.
-9. UNION Clause
-Role: Combines the result sets of two or more SELECT queries into a single result set.
-Description: The UNION clause is used to combine the results of two or more SELECT statements. The result set includes all rows from each query, but duplicates are eliminated unless UNION ALL is used.
-Example:
-
-SELECT student_name FROM students WHERE age > 18
-UNION
-SELECT student_name FROM students WHERE age <= 18;
-This query combines two lists of student names: one for students older than 18, and another for those 18 or younger.
-10. AS Clause (Alias)
-Role: Provides temporary names (aliases) to columns or tables for readability or convenience.
-Description: The AS clause is used to rename columns or tables in the result set. Aliases make queries easier to read or work with, especially when dealing with complex calculations or joins.
-Example:
-
-SELECT student_name AS "Name", age AS "Student Age" FROM students;
-This query retrieves student names and ages, and renames the columns as "Name" and "Student Age" in the result set.

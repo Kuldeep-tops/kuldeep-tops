@@ -1,9 +1,8 @@
 1. What is the SELECT statement, and how is it used to query data?
 
-The SELECT statement is the most commonly used SQL (Structured Query Language) command to retrieve data from one or more tables in a database. It allows you to specify which columns of data you want to retrieve, from which table(s), and under what conditions.
-
+The SELECT statement is the most commonly used SQL (Structured Query Language) command to retrieve data from one or more tables in a database. 
+It allows you to specify which columns of data you want to retrieve, from which table(s), and under what conditions.
 Basic Syntax of the SELECT Statement
-
 SELECT column1, column2, ...
 FROM table_name
 WHERE condition;
@@ -17,46 +16,15 @@ Examples of Using the SELECT Statement:
 1. Selecting All Columns:
 To select all columns from the students table:
 
-
 SELECT * FROM students;
 The * means "all columns," so this will return every column in the students table.
 2. Selecting Specific Columns:
 To select only the first_name and last_name columns from the students table:
 
-
 SELECT first_name, last_name FROM students;
 This retrieves just the specified columns.
 3. Using WHERE to Filter Results:
 To select students who have a grade of "A":
-
-
-SELECT first_name, last_name FROM students
-WHERE grade = 'A';
-The WHERE clause filters the rows, returning only those where the grade column has a value of 'A'.
-4. Using ORDER BY to Sort Results:
-To select all students and sort them by their last_name in ascending order:
-
-
-SELECT first_name, last_name FROM students
-ORDER BY last_name ASC;
-The ORDER BY clause sorts the results by the last_name column in ascending order (ASC is optional because it's the default). You can also sort in descending order using DESC.
-5. Limiting the Number of Results:
-To select only the first 5 rows from the students table:
-
-
-SELECT * FROM students
-LIMIT 5;
-The LIMIT clause restricts the number of rows returned.
-6. Using Multiple Conditions with AND/OR:
-To select students with a grade of 'A' or 'B' and who are in the "Mathematics" department:
-
-
-SELECT first_name, last_name, department FROM students
-WHERE grade IN ('A', 'B') AND department = 'Mathematics';
-This query uses the IN keyword to match multiple possible values for grade and an AND condition to ensure both conditions are true.
-7. Selecting Distinct Values:
-If you only want unique values from a column, use DISTINCT:
-
 
 SELECT DISTINCT department FROM students;
 This query returns all unique departments from the students table.
@@ -69,7 +37,6 @@ In SQL, both the ORDER BY and WHERE clauses are used to refine and control the r
 The WHERE clause is used to filter rows based on specific conditions. It restricts the records returned by a query, ensuring that only the rows that meet the specified condition(s) are included in the result set.
 
 Syntax:
-
 SELECT column1, column2, ...
 FROM table_name
 WHERE condition;
@@ -77,86 +44,15 @@ Key Points:
 The WHERE clause is placed after the FROM clause and before the ORDER BY clause (if used).
 It allows for conditions that can compare values using operators like =, <, >, <=, >=, <> (not equal), BETWEEN, LIKE, IN, etc.
 You can combine multiple conditions using AND, OR, and NOT to build complex filters.
-Examples:
-Simple Condition:
-To select students who have a grade of 'A':
-
-
-SELECT first_name, last_name, grade
-FROM students
-WHERE grade = 'A';
-Only rows where the grade column equals 'A' are returned.
-Multiple Conditions:
-To select students who have a grade of 'A' and are enrolled in the "Mathematics" department:
-
-
-SELECT first_name, last_name, grade, department
-FROM students
-WHERE grade = 'A' AND department = 'Mathematics';
-Both conditions must be true for a row to be included in the result.
-Using IN for Multiple Values:
-To select students who have grades of 'A' or 'B':
-
-
-SELECT first_name, last_name, grade
-FROM students
-WHERE grade IN ('A', 'B');
-This filters for rows where the grade is either 'A' or 'B'.
-Using LIKE for Pattern Matching:
-To select students whose name starts with "J":
-
-
-SELECT first_name, last_name
-FROM students
-WHERE first_name LIKE 'J%';
-The % wildcard represents any sequence of characters, so this will match any first_name that starts with "J".
 2. ORDER BY Clause
-The ORDER BY clause is used to sort the result set based on one or more columns. It controls the order in which the rows are displayed, either in ascending (ASC) or descending (DESC) order.
-
+The ORDER BY clause is used to sort the result set based on one or more columns. 
+It controls the order in which the rows are displayed, either in ascending (ASC) or descending (DESC) order.
 Syntax:
-
 SELECT column1, column2, ...
 FROM table_name
 ORDER BY column1 [ASC | DESC], column2 [ASC | DESC], ...;
-Key Points:
 The ORDER BY clause is placed after the WHERE clause (if present) and any other clauses like GROUP BY.
 By default, the ORDER BY clause sorts the results in ascending order (ASC). If you want the results in descending order, you use DESC.
 You can order by one or more columns, and if multiple columns are specified, the result will first be sorted by the first column, then by the second column, and so on.
-Examples:
-Sorting in Ascending Order (Default):
-To select all students and sort them by their last name in ascending order:
-
-
-SELECT first_name, last_name
-FROM students
-ORDER BY last_name;
-The result will be sorted alphabetically by last_name.
-Sorting in Descending Order:
-To select all students and sort them by their grade in descending order (highest grade first):
-
-
-SELECT first_name, last_name, grade
-FROM students
-ORDER BY grade DESC;
-The DESC keyword ensures the result is sorted from the highest grade to the lowest.
-Sorting by Multiple Columns:
-To select all students and sort them first by department in ascending order, then by last_name in descending order:
-
-
-SELECT first_name, last_name, department
-FROM students
-ORDER BY department ASC, last_name DESC;
-The result is first sorted by department alphabetically, and if two students are in the same department, their last_name will determine the order within that department.
-How WHERE and ORDER BY Work Together:
 The WHERE clause filters the data, selecting only the rows that meet specific conditions.
 The ORDER BY clause then sorts the result set based on one or more columns, after the filtering has been applied.
-Example with Both WHERE and ORDER BY:
-To select students who have a grade of 'A' and sort them by their last name in ascending order:
-
-
-SELECT first_name, last_name, grade
-FROM students
-WHERE grade = 'A'
-ORDER BY last_name ASC;
-The WHERE clause filters out students who don't have a grade of 'A'.
-The ORDER BY clause sorts the remaining students by last_name in ascending order.
