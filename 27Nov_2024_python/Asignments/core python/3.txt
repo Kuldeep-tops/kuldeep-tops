@@ -1,0 +1,52 @@
+1. Understanding data types: integers, floats,strings, lists, tuples, dictionaries,sets.
+1. Integers (int)
+Integers are whole numbers, both positive and negative, without decimal points.
+Example: 5, -3, 100, 0
+2. Floats (float)
+Floats are numbers that contain decimal points.
+Example: 3.14, -0.5, 100.0
+3. Strings (str)
+Strings are sequences of characters, enclosed in either single quotes (') or double quotes (").
+Example: "hello", 'world', "123", 'Python 3'
+4. Lists (list)
+A list is an ordered collection of items, which can be of any data type (integers, strings, etc.). Lists are mutable, meaning you can change their contents.
+Example: [1, 2, 3], ["apple", "banana", "cherry"]
+5. Tuples (tuple)
+A tuple is similar to a list, but it is immutable. Once you create a tuple, you cannot change its contents.
+Example: (1, 2, 3), ("apple", "banana", "cherry")
+6. Dictionaries (dict)
+A dictionary is an unordered collection of key-value pairs. You use keys to access the corresponding values.
+Example: {"name": "John", "age": 25}
+
+2. Python variables and memory allocation.
+variable: A variable in Python is like a container that holds a value. You can store numbers, text, lists, and other data types in variables.
+variables are used to store values, and memory allocation refers to how Python assigns memory to those variables.
+Python automatically manages memory for you. When you create a variable and assign it a value,in python.
+Memory Allocation: Python assigns a portion of the computer’s memory to store the value you assigned to the variable.
+Automatic Memory Management: Python uses something called garbage collection to automatically free memory when it is no longer in use.
+
+example: x = 5      # Assigns integer 5 to variable x
+         y = x      # y now points to the same memory location as x
+         x = 10     # Now x points to a new memory location with the value 10
+        print(x)    # Output: 10
+        print(y)     # Output: 5
+        
+3. Python operators: arithmetic, comparison, logical, bitwise.
+Operators in Python are symbols that perform operations on variables and values.
+when we use in operations are known as operands, and operation are operands and variables are known as operaters.
+
+Arithmetic operators: (+, -, \*, /, % (modulus), ** (exponentiation))
+These are used for basic mathematical operations like addition, subtraction, multiplication, etc.
+we use arithmatic operators for performs mathematical operations.
+
+Comparison operators: (==, !=, >, <, >=, <=)
+These operators compare two values and return True or False depending on the result of the comparison.
+we use comparison operators to compaire two variables values with each others.
+
+Logical operators: (and, or, not)
+Logical operators are used to combine conditional statements and return True or False based on the conditions.
+we use cobined contional statement to find probability likes its value true or false.
+
+Bitwise operators: (& (bitwise AND), | (bitwise OR), ^ (bitwis XOR), ~ (bitwise NOT), << (left shift), >> (right shift))
+Bitwise operators work on the binary representations of integers (the 0s and 1s in the numbers). 
+These operators perform operations on each bit of the number.Perform operations and gives binary values.

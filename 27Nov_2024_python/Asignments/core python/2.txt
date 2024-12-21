@@ -1,0 +1,19 @@
+1. Understanding Python’s PEP 8 guidelines.
+ans. PEP 8 stands for Python Enhancement Proposal 8.
+The primary goal of PEP 8 is to ensure that Python code is easy to read and maintain code is easy way.
+its provide readeble code providing recommendations on how to write clean, readable, and consistent Python code.
+
+2. Indentation, comments, and naming conventions in Python.
+ans.  Indentation: 4 spaces per indentation level  to define the structure of the code (instead of curly braces or other markers)
+ comments: Single-line comments: Begin with a hash symbol (#). Everything after # on that line is considered a comment.
+ Multi-line comments: Use triple quotes (''' or """) for multi-line strings that are not assigned to any variable, which Python interprets as comments.
+ naming conventions: Variable names: Use snake_case for variables and function names. This means all lowercase letters with words separated by underscores.
+Example: user_age, total_sum, file_path
+
+3. Writing readable and maintainable code.
+To write readable and maintainable in a python, Add clear comments and docstrings to explain the why behind complex code.
+Keep the code simple, avoiding overly clever or complex solutions.
+Use meaningful names for variables, functions, and classes.
+Use consistent naming conventions and formatting throughout the codebase.
+Write tests and use version control.
+Follow PEP 8 guidelines for consistent formatting and style.

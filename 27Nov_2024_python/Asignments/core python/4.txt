@@ -1,0 +1,30 @@
+1. Introduction to conditionalstatements: if, else, elif.
+Conditional statements in Python are used to make decisions in your code. 
+These statements allow you to run certain blocks of code only if a condition is met (i.e., if it's True). 
+Python provides three main conditional statements: if, else, and elif.
+
+1. if Statement:
+The if statement checks if a condition is True. If it is, the block of code inside the if statement runs. 
+If the condition is False, the program skips the block of code and moves on.
+
+2. else Statement
+The else statement runs if the condition in the if statement is False. 
+It provides an alternative block of code to execute when the if condition is not met.
+
+3. elif (Else If) Statement
+The elif statement stands for "else if" and allows you to check multiple conditions. 
+It follows an if statement and can be used to check additional conditions if the first condition is False.
+
+2. Nested if-else conditions.
+Nested if-else conditions refer to placing one if-else statement inside another. 
+This allows you to check multiple conditions in a hierarchical or layered manner.
+Nested if-else lets you make more specific decisions by placing one conditional statement inside another.
+It allows you to handle complex conditions in layers, checking different conditions based on previous ones.
+syntax:
+if condition1:
+    if condition2:
+        # code if both condition1 and condition2 are True
+    else:
+        # code if condition1 is True and condition2 is False
+else:
+    # code if condition1 is False
