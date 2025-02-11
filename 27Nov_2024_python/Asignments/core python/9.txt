@@ -1,0 +1,80 @@
+9. String Manipulation
+1.Understanding how to access and manipulate strings.
+strings are sequences of characters that are used to store and manipulate text. 
+You can access and manipulate strings in various ways using built-in methods and operations.
+
+Strings are indexed in Python, starting from index 0. You can access individual characters by their index using bracket notation.
+text = "Hello"
+print(text[0])
+print(text[-1]) 
+ Slicing Strings You can use slicing to access parts (substrings) of a string. The syntax for slicing is string[start:end]:
+start: The index where the slice starts (inclusive).
+end: The index where the slice ends (exclusive)
+text = "Hello, World!"
+print(text[:5])
+print(text[7:]) 
+print(text[::2])
+ String Concatenation You can combine (concatenate) strings using the + operator.
+ text1 = "Hello"
+text2 = "World"
+result = text1 + " " + text2
+print(result) 
+String Repetition You can repeat a string multiple times using the * operator.
+text = "Hello"
+repeated_text = text * 3
+print(repeated_text)
+String Length You can use the built-in len() function to get the length of a string (i.e., the number of characters).
+text = "Hello"
+print(len(text))
+String Methods Python provides many built-in string methods to manipulate and work with strings. 
+text = "hello"
+print(text.upper()) 
+lower(): Converts all characters to lowercase.
+strip(): Removes leading and trailing whitespaces.
+replace(old, new): Replaces occurrences of a substring with another.
+
+2.Basic operations: concatenation, repetition,string methods(upper(), lower(), etc.).
+ Concatenation (Joining Strings)
+Concatenation means joining two or more strings together using the + operator.
+
+text1 = "Hello"
+text2 = "World"
+result = text1 + " " + text2  # Adding space between them
+print(result) 
+
+Repetition (Repeating Strings)
+Repetition means repeating a string multiple times using the * operator.
+
+text = "Hello "
+result = text * 3
+print(result) 
+
+String Methods
+Python has several useful string methods for manipulating text. 
+a) upper(): Converts all characters to uppercase.
+text = "hello"
+print(text.upper())
+b) lower(): Converts all characters to lowercase.
+text = "HELLO"
+print(text.lower())
+c) strip(): Removes extra spaces from the beginning and end of the string.
+text = "  hello  "
+print(text.strip())
+d) replace(old, new): Replaces a part of the string with something else.
+text = "hello world"
+print(text.replace("world", "Python"))
+e) split(separator): Splits a string into a list at each occurrence of the separator.
+text = "apple,banana,orange"
+print(text.split(",")) 
+
+3.String slicing.
+String slicing in Python is a way to access a part of a string by specifying a start and end index.
+string[start:end]
+start is the index where you want to start the slice (inclusive).
+end is the index where you want the slice to stop (exclusive).
+If you leave out start, it defaults to 0 (beginning of the string).
+If you leave out end, it defaults to the end of the string.
+If you omit both start and end, the entire string will be returned.
+If you omit the end, it will slice from the start index to the end of the string.
+Negative indices allow you to start counting from the end of the string.
+You can also specify a step value (i.e., how many characters to skip).

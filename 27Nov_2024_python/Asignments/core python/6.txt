@@ -1,0 +1,55 @@
+6. Generators and Iterators
+1.Understanding how generators work in Python.
+1. Generator: A generator is a function that uses the yield keyword. Instead of returning a value and exiting,
+yield pauses the function, saving its state, and can resume where it left off when needed.
+generators when you want to produce a series of values lazily (one at a time), instead of generating all values at once.
+
+def count_up_to(max):
+    count = 1
+    while count <= max:
+        yield count  
+        count += 1
+
+note. They don't store the entire sequence in memory, making them more memory efficient.
+You can only loop through them once. After that, they are exhausted.
+
+2.Difference between yield and return.
+yield:
+Pauses the function: When a function hits a yield statement, it sends a value back, 
+but the function keeps its state and can continue where it left off when it's called again.
+Can be used multiple times: The function doesn't stop after yield. 
+You can call the generator again and again to get more values.
+
+def numbers_with_return():
+    return 1
+    return 2
+
+return:
+Ends the function: When a function hits a return statement, it immediately exits and sends a value back to where it was called.
+One-time use: After a return, the function cannot continue from where it left off.
+
+def numbers_with_yield():
+    yield 1
+    yield 2 
+
+3.Understanding iterators and creating custom iterators.
+
+ Iterators in python is an object that allows you to loop through a sequence (like a list, tuple, or even a custom collection). 
+ An iterator keeps track of its current position and allows you to move through the sequence one item at a time.
+ __iter__(): This method should return the iterator object itself.
+__next__(): This method should return the next item in the sequence. If there are no more items, it raises a StopIteration exception.
+
+class CountUpTo:
+    def __init__(self, max):
+        self.max = max  to
+        self.current = 1  
+    # Define __iter__() so we can use it in loops
+    def __iter__(self):
+        return self  
+    # Define __next__() to move to the next value
+    def __next__(self):
+        if self.current > self.max:
+            raise StopIteration  
+        else:
+            self.current += 1 
+            return self.current - 1

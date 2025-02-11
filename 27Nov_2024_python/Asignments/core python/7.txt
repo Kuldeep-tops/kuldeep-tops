@@ -1,0 +1,90 @@
+7. Functions and Methods
+1.Defining and calling functions in Python.
+functions are defined using the def keyword and can be called by using their name followed by parentheses.
+A function in Python is defined with the def keyword, followed by the function name and parentheses () 
+(you can also add parameters inside the parentheses if needed).
+def greet():
+    print("Hello, World!")
+greet()  # Calling the greet function
+
+call a function, you just use its name followed by parentheses. If the function requires parameters, 
+you provide them inside the parentheses.
+can define a function that takes parameters (inputs), which allows you to use different values when calling the function.
+def greet(name):
+    print(f"Hello, {name}!")
+
+2.Function arguments (positional, keyword, default).
+functions can accept different types of arguments. These are typically categorized as positional, keyword, and default arguments.
+1.Positional arguments are the most common. The values are assigned to the parameters based on their position in the function call.
+def greet(name, age):
+    print(f"Hello, {name}! You are {age} years old.")
+
+2.Keyword arguments allow you to specify the name of the parameter when calling the function. This means you don't have to follow the positional order.
+def greet(name, age):
+    print(f"Hello, {name}! You are {age} years old.")
+
+3.Default arguments allow you to specify a default value for a parameter in case the caller doesn't provide one. 
+If a value is passed for the parameter, it will override the default.
+def greet(name, age=18):
+    print(f"Hello, {name}! You are {age} years old.")
+
+You can mix positional, keyword, and default arguments in a function, but the order must follow a certain rule:
+
+Positional arguments first.Values passed in the order of parameters.
+Then, default arguments.Provide a default value for parameters if not passed.
+Finally, keyword arguments.Values passed with the parameter name, so order doesn't matter.
+
+def greet(name, age=18, city="Unknown"):
+    print(f"Hello, {name}! You are {age} years old and live in {city}.")
+
+greet("Alice")                
+greet("Bob", city="New York") 
+greet("Charlie", 25, "London") 
+
+3.Scope of variables in Python.
+local: A variable is in the local scope if it is defined inside a function or block.
+It can only be accessed within that function or block.Local (inside the current function)
+
+Global: A variable is in the global scope if it is defined outside any function.
+It can be accessed from anywhere in the program, including inside functions (but read-only unless explicitly modified using the global keyword).
+Global (outside functions, in the main program)
+
+Enclosing:
+This refers to the scope of functions that are inside other functions. If a variable is in an outer function, it is accessible in the
+inner function (but not the other way around).Enclosing (any enclosing functions)
+
+Built-in:
+Python has a built-in scope that includes all the built-in functions and exceptions, like print(), len(), etc.
+These are always available in any part of your program.Built-in (Python's built-in functions)
+
+4.Built-in methods forstrings, lists, etc.
+Python provides several built-in methods for common data types like strings, lists, dictionaries, etc. These methods help you perform various tasks
+like modifying, searching, or accessing elements. Let's go through a few basic ones for strings,lists, and dictionaries in a simple way:
+String methods: Manipulate text (e.g., upper(), strip(), replace()).
+Strings in Python come with several built-in methods that help you manipulate text
+text = "hello"
+print(text.upper()) 
+text = "HELLO"
+print(text.lower()) 
+text = "  hello  "
+print(text.strip())
+text = "hello world"
+print(text.replace("world", "Python"))
+List methods: Manipulate lists (e.g., append(), remove(), sort()).
+Lists are one of Python's most commonly used data types, and they come with several methods to help you work with collections of items.
+fruits = ["apple", "banana"]
+fruits.append("grape")
+fruits.extend(["grape", "orange"])
+fruits.insert(1, "orange")
+fruits.remove("banana")
+numbers = [3, 1, 4, 1, 5]
+numbers.sort()
+Dictionary methods: Manipulate key-value pairs (e.g., get(), keys(), items()).
+Dictionaries are key-value pairs, and they also have several useful built-in methods.
+person = {"name": "Alice", "age": 25}
+print(person.get("name"))
+print(person.keys())
+print(person.values())
+print(person.items())
+person.update({"age": 26, "city": "New York"})
+print(person)

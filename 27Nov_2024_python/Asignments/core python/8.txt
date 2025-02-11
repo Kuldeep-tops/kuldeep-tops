@@ -1,0 +1,12 @@
+Control Statements (Break, Continue, Pass)
+1.Understanding the role of break, continue, and pass in Python loops
+In Python, break, continue, and pass are control statements that are used to alter the flow of execution in loops.
+break:
+The break statement is used to exit a loop prematurely, even if the loop condition is still true.
+It stops the loop completely and moves on to the next part of the program.Stops the loop entirely.
+continue:
+The continue statement is used to skip the current iteration and move to the next iteration of the loop,
+without executing the remaining code inside the loop for that iteration.Skips the current iteration and moves to the next one.
+pass:
+The pass statement is a null operation. It does nothing when executed. 
+It's useful as a placeholder where code is required syntactically but you don't want to execute anything.Does nothing (acts as a placeholder).
