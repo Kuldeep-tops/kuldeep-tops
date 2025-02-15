@@ -1,0 +1,32 @@
+1.Iterating over a list using loops.
+Iterating over a list using loops in Python is straightforward. Here's a simple way to iterate through a list using a for loop.
+The for loop goes through each element in my_list and assigns it to the variable element.
+It then prints each element one by one.
+Using range() for Index-based Iteration
+You can also use the range() function if you want to iterate by index
+for i in range(len(my_list)):
+    print(my_list[i])
+
+2.Sorting and reversing a list using sort(), sorted(), and reverse().
+Here's a simple Python program that demonstrates how to sort and reverse a list using the methods sort(), sorted(), and reverse()
+sort(): Sorts the list in-place, meaning it changes the original list.modifies the original list.
+sorted(): Returns a new sorted list, leaving the original list unchanged.returns a new sorted list and leaves the original list unchanged.
+reverse(): Reverses the order of the elements in the list in-place.modifies the original list by reversing the order of elements.
+
+3.Basic list manipulations: addition, deletion, updating, and slicing
+Addition
+You can add elements to a list using the append() method or the extend() method.
+append() adds a single element to the end of the list.
+extend() adds multiple elements to the end of the list.
+Deletion
+You can delete elements from a list using the remove() method or the pop() method.
+remove() removes the first occurrence of the specified element from the list.
+pop() removes and returns the element at the specified position in the list.
+Updating
+You can update elements in a list using the index method or the insert() method.
+index() returns the index of the first occurrence of the specified element in the list.
+insert() inserts the specified element at the specified position in the list.
+Slicing
+You can extract a subset of elements from a list using slicing.
+
+

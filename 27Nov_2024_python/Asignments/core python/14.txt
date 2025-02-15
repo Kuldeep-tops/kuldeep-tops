@@ -1,0 +1,30 @@
+1.Introduction to tuples, immutability
+A tuple is a collection data type in Python that is similar to a list. The key difference is that tuples are immutable, 
+meaning their elements cannot be changed after creation.Tuples are created using parentheses () instead of square brackets [] like lists.
+Immutability makes tuples faster and more efficient than lists, especially when used as keys in dictionaries.
+Since they cannot be modified, they ensure data integrity.
+
+2.Creating and accessing elements in a tuple.
+Here's a simple explanation and program for creating and accessing elements in a tuple.
+1. Creating a Tuple:
+You create a tuple by enclosing elements in parentheses (), and elements are separated by commas.
+my_tuple = (10, 20, 30, "Hello", 3.14)
+2.Accessing Elements in a Tuple:
+You can access elements in a tuple using indexing. The index starts from 0, just like with lists.
+print(my_tuple[0])  
+print(my_tuple[3]) 
+Negative Indexing:
+You can also use negative indexing to access elements from the end of the tuple. -1 refers to the last element, 
+-2 to the second-to-last element, and so on.
+print(my_tuple[-1]) 
+print(my_tuple[-2])
+
+3.Basic operations with tuples: concatenation, repetition, membership.
+concatenation
+You can combine two or more tuples into a new tuple using the + operator (concatenation).
+Repetition
+You can repeat a tuple multiple times using the * operator.
+Membership
+You can check if an element is present in a tuple using the in operator.
+
+

@@ -1,0 +1,42 @@
+1.Common list operations: concatenation, repetition, membership.
+2.2.1.1. Concatenation
+Concatenation is the process of combining two or more lists into a single list. In Python,
+the `+` operator is used for concatenation.
+repetition
+Repetition is the process of creating a list that contains a specified element repeated a specified number of times
+membership
+Membership is the process of checking if an element is present in a list or not.
+List operations: indexing, slicing, and membership testing.
+Indexing
+Indexing is the process of accessing a specific element in a list by its index. In Python,
+the index of the first element is 0.
+Slicing
+Slicing is the process of extracting a subset of elements from a list. In Python, the syntax
+is used for slicing.
+Membership testing
+Membership testing is the process of checking if an element is present in a list or not. In Python
+, the `in` keyword is used for membership testing.
+List methods
+List methods: append, extend, insert, remove, pop
+Append
+The `append()` method adds an element to the end of the list.
+Extend
+The `extend()` method adds multiple elements to the end of the list.
+Insert
+The `insert()` method inserts an element at a specified position in the list.
+Remove
+The `remove()` method removes the first occurrence of a specified element from the list.
+Pop
+The `pop()` method removes and returns the last element from the list.
+List comprehensions
+List comprehensions are a concise way to create lists. They consist of brackets containing the expression, which
+is executed for each element, along with the for loop to loop over the elements.
+
+2.Understanding list methods like append(), insert(), remove(), pop().
+Here’s a simple explanation of common list methods in Python: append(), insert(), remove(), and pop().
+append(): This method adds an element to the end of the list. It takes one argument, the element to be added.
+insert(): This method inserts an element at a specified position in the list. It takes two arguments,
+the position and the element to be inserted.
+remove(): This method removes the first occurrence of a specified element from the list. It takes one argument
+the element to be removed.
+pop(): This method removes and returns the last element from the list. It takes one argument, the index of the element to be removed.

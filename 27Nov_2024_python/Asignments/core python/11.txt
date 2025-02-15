@@ -1,0 +1,51 @@
+Python – Collections, functions and Modules
+
+1.Understanding how to create and access elements in a list.
+A list in Python is a collection of items or elements that can be of different data types (integers, strings, etc.). 
+You can create a list and access its elements in a very simple way.
+
+1.Creating a List:
+You create a list by using square brackets [], and separating each element with a comma.
+my_list = [10, 20, 30, 'apple', 'banana', 40]
+
+2.Accessing Elements in a List:
+You can access elements in a list using their index. The index starts from 0 for the first element.
+print(my_list[0])  
+print(my_list[3])
+
+3.Negative Indexing:
+You can also access elements from the end of the list using negative indexes. -1 is the last element, -2 is the second-to-last, and so on.
+print(my_list[-1])
+print(my_list[-3])
+
+4.Modifying List Elements:
+You can change an element in a list by accessing it through its index and assigning a new value.
+my_list[0] = 100
+print(my_list)
+
+5.Adding Elements to a List:
+You can add elements to a list using methods like append() or insert().
+my_list.append(50)
+print(my_list)
+
+2.Indexing in lists (positive and negative indexing).
+Indexing in Python lists allows you to access individual elements in a list using their positions (indexes).
+1. Positive Indexing:
+In positive indexing, the index starts at 0 for the first element and increases by 1 for each subsequent element
+2.Negative Indexing:
+In negative indexing, the index starts from -1 for the last element and decreases by 1 for each
+preceding element.
+
+3.Slicing a list: accessing a range of elements.
+Slicing a list in Python allows you to access a range of elements from a list, rather than just a single element.
+You can use the following syntax to slice a list: list[start:stop:step].
+Basic Slicing:
+If you just want a portion of the list (from start to stop-1)
+Omitting the Start or Stop:
+Omitting start: Starts from the beginning of the list.
+Using Step (Skipping Elements):
+The step allows you to skip elements.
+Using Step (Skipping Elements):
+The step allows you to skip elements.
+Negative Indexing with Slicing:
+You can also use negative indexing to slice from the end of the list

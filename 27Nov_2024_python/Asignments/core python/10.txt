@@ -1,0 +1,68 @@
+1.How functional programming works in Python.
+Functional programming (FP) is a programming paradigm where computation is treated as the evaluation of mathematical 
+functions and avoids changing state or mutable data. Python,while not a purely functional programming language, supports functional programming concepts.
+
+First-Class Functions:
+Functions in Python can be passed as arguments to other functions, returned from other functions, and assigned to variables.
+
+Higher-Order Functions:
+These are functions that take other functions as arguments or return a function.
+
+Pure Functions:
+A pure function is a function where the output value is determined only by its input values, 
+without any observable side effects (such as modifying a global variable).
+
+Immutability:
+In functional programming, data is immutable (it cannot be changed after it is created). While Python allows mutability,
+you can still follow functional programming practices by avoiding changing data.
+
+Map, Filter, and Reduce:
+These are built-in functional programming tools in Python that help with transforming data.
+
+Lambda Functions:
+Lambda functions are anonymous (unnamed) functions defined with the lambda keyword, commonly used for short operations.
+
+Recursion:
+Instead of using loops, functional programming often uses recursion. A function calls itself to solve smaller instances of a problem.
+Built-in Functions: map(), filter(), reduce() allow functional-style programming in Python.
+
+2.Using map(), reduce(), and filter() functions for processing data.
+Let's break down the usage of map(), reduce(), and filter() functions in Python 
+map() function
+The map() function is used to apply a given function to all items in an iterable (e.g., list) and returns a map object (which is an iterator). 
+You can convert this iterator to a list or other collections.
+function: A function that will be applied to each element of the iterable.
+iterable: A collection of elements like a list, tuple, etc.
+ 
+filter() function
+The filter() function is used to filter elements from an iterable based on a condition specified by a function. It returns a filter object (an iterator), 
+which can be converted into a list.
+
+reduce() function
+The reduce() function is used to cumulatively apply a function to the items in an iterable. It is found in the functools module. Unlike map()
+and filter(), reduce() returns a single value after applying the function
+function: A function that takes two arguments and performs some operation on them.
+iterable: A collection of elements.
+
+Combining map(), filter(), and reduce()
+You can combine all three functions to process data in a more complex pipeline. For example, let’s say we have a list of numbers, and we want to:
+Square the numbers.
+Filter out the numbers greater than 10.
+Find the sum of the remaining numbers.
+
+3.Introduction to closures and decorators.
+1. Closures
+A closure occurs when a function is defined inside another function and the inner function 
+retains access to variables from the outer function, even after the outer function has finished executing. 
+The inner function remembers the environment in which it was created.
+It allows the inner function to "capture" variables from the outer function.
+
+2.Decorators
+A decorator is a function that takes another function and extends or modifies its behavior. Essentially, it "wraps" the original
+function to add extra functionality, like logging, timing, or validation, without changing the original function itself. 
+Decorators are often used with the @ symbol.
+A decorator is a function that returns a new function that "wraps" the original function.
+It allows modifying the behavior of a function in a clean and readable way.
+
+
+

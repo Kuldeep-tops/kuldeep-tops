@@ -1,0 +1,53 @@
+1.Introduction to Python modules and importing modules
+In Python, modules are files containing Python code that can define functions, classes, and variables, and include runnable code. 
+Modules allow you to organize your code into reusable pieces. You can use built-in modules or create your own.
+1. Importing a module:
+To use a module in your program, you need to import it. 
+syntax:
+import module_name
+example:
+import math 
+import math  # Importing the math module
+
+# Using the sqrt function from math module
+result = math.sqrt(16)
+print(result)
+In this example, the math module is imported, and we use its sqrt() function to calculate the square root 
+
+Importing specific functions from a module:
+You can also import specific functions from a module
+
+from math import sqrt
+
+# Now you can use sqrt directly without prefixing it with "math."
+result = sqrt(25)
+print(result)
+
+Creating your own module:
+You can create your own module by saving functions in a Python file (e.g., my_module.py), and then importing it.
+def greet(name):
+    print(f"Hello, {name}!")
+
+Renaming a module during import:
+You can rename a module when importing it using the as keyword
+import math as m
+
+2. Standard library modules: math, random.
+Python's standard library includes many useful modules that you can use right out of the box. Two of the most commonly used modules are math and random. Here's a simple introduction to both:
+
+1. math Module:
+The math module provides mathematical functions like square roots, trigonometric functions, and constants like π.
+
+random Module:
+The random module provides functions for generating random numbers, making it useful for simulations, games, and testing.
+
+3.Creating custom modules.
+You can create your own modules by saving functions in a Python file (e.g., my_module.py) and
+4. Importing modules from a package.
+You can import modules from a package using the dot notation.
+5. Importing all functions from a module.
+You can import all functions from a module using the * wildcard.
+6. Importing modules with alias.
+You can import modules with an alias using the as keyword.
+7. Importing modules from a specific version of a package.
+8. Importing modules from a specific version of a package using the -m option.

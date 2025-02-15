@@ -1,0 +1,70 @@
+1.Defining functions in Python.
+Defining a function in Python is simple! You use the def keyword followed by the function name, and then 
+define the parameters (if any) inside parentheses. 
+
+# Define a function to greet someone
+def greet(name):
+    print(f"Hello, {name}!")
+# Call the function
+greet("Alice")
+
+def: Defines the function.
+name: The parameter passed to the function.
+return: Sends back a result from the function.
+
+2.Different types of functions: with/without parameters, with/without return values.
+There are two types of functions in Python: those with parameters and those without. Functions with parameters
+can take in values and use them inside the function. Functions without parameters do not take in any values
+def greet():
+    print("Hello, World!")
+
+# Call the function
+greet()
+
+Function with parameters but without return value:
+This function takes input (parameters) but does not return anything.
+def greet(name):
+    print(f"Hello, {name}!")
+
+# Call the function
+greet("Alice")
+Function without parameters but with return value:
+This function doesn't take any parameters but returns a value.
+def get_pi():
+    return 3.14
+
+# Call the function and store the result
+pi_value = get_pi()
+print(pi_value)
+Function with parameters and with return value:
+This function takes parameters and returns a value.
+def add(a, b):
+    return a + b
+
+# Call the function and store the result
+result = add(3, 5)
+print(result)
+
+3. Anonymous functions (lambda functions)
+Lambda functions are small anonymous functions that can take any number of arguments, but can only have one expression
+They are used to create small, one-time use functions.
+# Define a lambda function to add two numbers
+add = lambda a, b: a + b
+# Call the function
+print(add(3, 5))
+4. Function arguments and return values
+Function arguments are the values passed to a function when it is called. Return values are the values sent
+back from a function when it is called.
+Function arguments are passed to a function when it is called. They are used to pass data to a
+function. Return values are sent back from a function when it is called. They are used to pass
+data back from a function.
+python
+def greet(name):
+# Function arguments
+print(f"Hello, {name}!")
+# Return value
+return f"Hello, {name}!"
+# Call the function and store the result
+result = greet("Alice")
+print(result) # Output: Hello, Alice!
+5. Function arguments and return values with default values

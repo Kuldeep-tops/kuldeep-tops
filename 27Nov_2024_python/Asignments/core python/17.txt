@@ -1,0 +1,56 @@
+1.Iterating over a dictionary using loops.
+Here's a simple Python program to iterate over a dictionary using loops
+Iterating over keys: The for key in my_dict loop iterates over all the keys in the dictionary.
+Iterating over values: The for value in my_dict.values() loop iterates over all the values in the dictionary.
+Iterating over key-value pairs: The for key, value in my_dict.items() loop iterates over both keys and values.
+my_dict = {"a": 1, "b": 2, "c": 3}
+
+for key in my_dict:
+    print(key)
+
+2.Iterating over values
+for value in my_dict.values():
+    print(value)
+
+3.Iterating over both keys and values
+for key, value in my_dict.items():
+    print(key, value)
+
+2.Merging two lists into a dictionary using loops or zip()
+You can merge two lists into a dictionary using either a loop or the zip() function. Here’s how you can do both
+keys = ['a', 'b', 'c']
+values = [1, 2, 3]
+
+my_dict = {}
+for i in range(len(keys)):
+    my_dict[keys[i]] = values[i]
+print(my_dict)
+Using zip()
+keys = ['a', 'b', 'c']
+values = [1, 2, 3]
+my_dict = dict(zip(keys, values))
+print(my_dict) 
+The zip() function pairs each element of the two lists and creates a dictionary directly!
+
+3.Counting occurrences of characters in a string using dictionaries.
+You can count the occurrences of characters in a string using a dictionary in a simple way.
+my_string = "hello"
+
+char_count = {}
+
+for char in my_string:
+    if char in char_count:
+        char_count[char] += 1
+    else:
+        char_count[char] = 1
+
+print(char_count)
+Using collections.Counter
+Python's collections module has a built-in Counter class that makes counting characters even easier
+from collections import Counter
+
+my_string = "hello"
+char_count = Counter(my_string)
+
+print(char_count)
+Both methods are simple, but Counter is a more concise approach!
