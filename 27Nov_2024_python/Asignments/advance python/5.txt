@@ -1,0 +1,40 @@
+1.Introduction to exceptions and how to handle them using try, except, and finally
+Exceptions are errors that can occur during the execution of a program.
+erroe can occurs in program execution when To handle exceptions gracefully and 
+prevent the program from crashing, we can use exception handling. when we use this 
+mechanism to stop errors occurs.
+this method like that is  try, except, and finally
+try: This block of code is executed first. If an error occurs, the code in this block
+is stopped and the except block is executed.
+except: This block of code is executed if an error occurs in the try block. We can also
+specify a specific exception type to handle, like except ValueError:.
+finally: This block of code is executed regardless of whether an error occurred or not.
+try:
+    num = 10 / 0  # This will raise a ZeroDivisionError
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+finally:
+    print("This will always run.")
+
+2.Understanding multiple exceptions and custom exceptions.
+
+Multiple exceptions can be handled using the except block with multiple exception types separated by commas. For example,
+try:
+num = 10 / 0  # This will raise a ZeroDivisionError
+except (ZeroDivisionError, TypeError):
+print("Either a ZeroDivisionError or a TypeError occurred!")
+finally:
+print("This will always run.")
+
+3.Using the raise statement to throw exceptions.
+we can handle multiple exceptions and even create your own custom exceptions to handle specific error situations in your program. 
+multiple exception :
+we need to handle more than one type of exception we use multiple exception to except blocks to catch multiple exceptions at time.
+custom exception :
+we can create custom exception by using class and raise method to throw exception.
+try:
+num = 10 / 0  # This will raise a ZeroDivisionError
+except (ZeroDivisionError, TypeError):
+print("Either a ZeroDivisionError or a TypeError occurred!")
+finally:
+print("This will always run.")

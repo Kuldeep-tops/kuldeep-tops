@@ -1,0 +1,17 @@
+1.Introduction to SQLite3 and PyMySQL for database connectivity
+SQLite3 is a lightweight and serverless relational database engine.
+It's built into Python, so no need for an external server or installation.
+PyMySQL is a Python driver for MySQL, which is a popular relational database management system.
+It allows you to connect to a MySQL database from Python.we will need to install PyMySQL first.
+pip install pymysql use this command to install PyMySQL.
+
+2.Creating and executing SQL queries from Python using these connectors.
+We import the necessary libraries: sqlite3 for database connection and pandas for data manipulation.
+import sqlite3 we use importing database 
+We establish a connection to our database.
+conn = sqlite3.connect('employee.db') we use to esatablish connection to the database.
+We create a SQL query string.
+We use pd.
+Finally, we print the results and close our database connection.
+conn.close() we use to close the connection.
+

@@ -1,0 +1,36 @@
+1.Opening files in different modes ('r', 'w', 'a', 'r+', 'w+').
+in python programming various type of mode present in python 
+'w'
+'w' mode is not supported in python programming
+'r' (Read): Opens the file for reading (default mode). The file must exist.
+'w' (Write): Opens the file for writing. If the file doesn't exist, it creates a new one. If it exists, it overwrites the content.
+'a' (Append): Opens the file for appending. If the file doesn't exist, it creates
+'r+' (Read/Write): Opens the file for both reading and writing. The file must exist.
+'w+' (Write/Read): Opens the file for both writing and reading. If the file doesn't exist, it creates a new one. If it exists, it overwrites the content.
+'x' (Create): Opens the file for writing. If the file doesn't exist, it
+creates a new one. If it exists, it raises a FileExistsError.
+'r' mode is used to open a file in read mode. It is the default mode. If
+the file does not exist, Python will raise an error. If the file exists, it
+will be opened for reading.
+
+2.Using the open() function to create and access files.
+The open() function is used to create and access files in Python. 
+The open() function takes two parameters: the name of the file and the mode in which the file should be opened.
+To create a file or open an existing file in write mode ('w') or append mode ('a')
+use the open() function with the 'w' or 'a' mode. To open a file
+To read from an existing file, you can use the read mode ('r')
+The open() function returns a file object, which has several methods and attributes for performing various file operations
+
+3.If you want to add more content to an existing file, use append mode ('a')
+If you want to add more content to an existing file, use append mode ('a'). This mode
+opens the file for appending, so any new content you add will be added to the end of the file.
+you can also open a file for both reading and writing using 'w+' or 'r+'.
+
+3.Closing files using close().
+The close() method is used to close a file. It is used to free up the system resources
+that the file was using. It is a good practice to close the file after you are done with
+it to avoid memory leaks. after you open a file using the open() function, it is important to close the file using the close() method 
+to free up system resources.Opening and Closing a File When you open a file with open(), you should always close it after you're done to ensure 
+the file is properly saved Automatically Closing a File Using with A better way to handle files is to use the with statement. 
+It automatically takes care of closing the file after the block of code is executed 
+

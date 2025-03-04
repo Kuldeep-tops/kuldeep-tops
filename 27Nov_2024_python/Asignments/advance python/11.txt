@@ -1,0 +1,17 @@
+1.Using re.search() and re.match() functions in Python’s re module for pattern matching
+we want to check if a pattern matches only at the beginning of a string so we use re.match()
+and we want to search the entire string for the first occurrence of the pattern so we can use re.search()
+the re module provides functions for working with regular expressions. 
+Two of the most commonly used functions are re.search() and re.match(),which allow you to search for patterns in strings.
+
+2.Difference between search and match.
+re.match():
+Matches only at the beginning of the string.
+It checks if the pattern starts the string.
+If the pattern is found at the start, it returns a match object, otherwise None.
+re.search():
+Searches the entire string for the pattern, not just the beginning.
+It looks anywhere in the string to find the first occurrence of the pattern.
+If the pattern is found, it returns a match object; otherwise, it returns None.
+
+

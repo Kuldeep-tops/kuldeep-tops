@@ -1,0 +1,10 @@
+1.Reading from a file using read(), readline(), readlines().
+readlines() returns a list of lines that are read from the file
+read() reads the entire file into a string
+readline() reads a single line from the file
+
+2.Writing to a file using write() and writelines().
+write() writes a string to the file using write lines().
+writelines() writes a list of strings to the file.
+
+

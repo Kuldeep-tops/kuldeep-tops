@@ -1,0 +1,25 @@
+1.Understanding the concepts of classes, objects, attributes, and methods in Python
+classes
+class is a template for creating objects. It defines the properties and behaviors of an
+object. A class is essentially a blueprint or a design pattern for creating objects.
+attributes
+An attribute is a characteristic or a property of an object. It is a variable that is associated with
+an object and is used to describe or define the object's state. Attributes are also known as data
+members or instance variables.
+methods
+A method is a function that is associated with an object. It is a block of code that is
+associated with an object and is used to perform a specific action or operation on the object. Methods
+are also known as functions or procedures.
+
+2.Difference between local and global variables.
+local variables
+A local variable is a variable that is defined within a function or a method. 
+It is a variable that is only accessible within the function or method where it is defined.
+Local variables are created when a function or method is called and are destroyed when the function or method ends.
+
+global variables
+A global variable is a variable that is defined outside of a function or a method. 
+It is avariable that is accessible from anywhere in the program. 
+Global variables are created when a program starts and are destroyed when the program ends.
+
+

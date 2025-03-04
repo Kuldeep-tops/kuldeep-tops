@@ -1,0 +1,4 @@
+Hello Python ,this is my first file
+python is a programming language
+The python is a high level language
+python is a obeject oriented programming language

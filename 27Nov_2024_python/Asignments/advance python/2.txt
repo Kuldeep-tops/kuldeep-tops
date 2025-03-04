@@ -1,0 +1,14 @@
+1.Using the input() function to read user input from the keyboard
+input() function are used to read user input from the user or get user from the keyboard.
+program pauses and waits for the user to type something.
+
+name = input("Enter a name...")
+
+2.Converting user input into different data types (e.g., int, float, etc.).
+We can convert user input into different data types using the following functions:
+- int() function to convert a string into an integer.
+- float() function to convert a string into a floating point number.
+- str() function to convert a variable into a string.
+- bool() function to convert a variable into a boolean value.
+- complex() function to convert a string into a complex number.
+

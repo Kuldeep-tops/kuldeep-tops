@@ -1,0 +1,12 @@
+1.Method overloading: defining multiple methods with the same name but different parameters.
+Two or more methods have the same name but different numbers of parameters and different types of parameters, or both. 
+this method is called overloaded method this called method overloading.
+method overloading (defining multiple methods with the same name but different parameters) is not directly supported
+like in some other programming languages.achieve similar behavior by using default parameters, variable-length arguments,
+or conditional statements inside a method.
+
+
+2.Method overriding: redefining a parent class method in the child class.
+method overriding occurs when a child class provides a specific implementation of a method that is already 
+defined in its parent class.This allows the child class to modify or extend the behavior of the parent class method.
+

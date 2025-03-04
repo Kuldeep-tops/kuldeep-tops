@@ -1,0 +1,24 @@
+1.Method overloading: defining multiple methods with the same name but different parameters.
+the method overloading refers to the concept in object-oriented programming where multiple methods within
+a class have the same name but different in their parameter lists
+allowing you to define various functionalities based on the types or
+number of arguments provided when calling the method.
+
+2.Method overriding: redefining a parent class method in the child class.
+the method in the child class must have the same name, parameter list, and return type (or a subclass of the return type) as the parent method.
+You may see the @Override annotation above a method.Any method that is called must be defined within its own class or its superclass.
+class Parent:
+    def show(self):
+        print("Inside Parent")
+
+class Child(Parent):
+    def show(self):
+        print("Inside Child")
+
+# Using the classes
+child = Child()
+child.show()  # Output: Inside Child
+
+
+
+

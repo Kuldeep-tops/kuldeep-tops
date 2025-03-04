@@ -1,0 +1,22 @@
+1.Introduction to the print() function in Python.
+
+It's a very simple and common function that helps you show messages, values, or results from your code.
+It is use to display to display output to the screen.the print() is used to show the messages during execution of program.
+
+print("hello")
+
+print string
+print("Hello World!")
+print number
+print(5)
+print multiple values
+print("sample values",5)
+
+2.Formatting outputs using f-strings and format().
+python is can use for output using print() function to display output , using f-strings for formatted strings
+format() function to display
+f-strings are used to format strings in python. They are a way to embed expressions inside string
+syntax
+f"some string {variable} more strings"
+format() gives more flexibility with things like positional and keyword arguments.
+

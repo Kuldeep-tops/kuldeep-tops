@@ -1,0 +1,15 @@
+1. Single, Multilevel, Multiple, Hierarchical, and Hybrid inheritance in Python.
+single inheritance - A single inheritance in Python that can be used to create multiple inheritance structures in the same hierarchy
+multilevel inheritance - A multilevel inheritance in Python that can be  used to create multiple inheritance structures in the same hierarchy
+when using between two or more inheritance structures in the same hierarchy.
+hierarchy inheritence - A hierarchy in Python that can be used to create multiple inheritance structures in the same hierarchy when using
+Hybrid inheritance - A hybrid inheritance in Python that can be used to create multiple inheritance structures in the same hierarchy when
+using hybrid inheritance 
+
+2.Using the super() function to access properties of the parent class.
+To access properties of a parent class using the super() function, you typically use it within a method of a subclass.
+This allows the subclass to call methods or access attributes from the parent class without explicitly naming it.
+super() function helps in calling the parent class’s methods and constructors without explicitly referring to the parent class name.
+
+
+
